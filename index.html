@@ -1,155 +1,63 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Portfolio Showcase</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings:
-                'FILL' 0,
-                'wght' 400,
-                'GRAD' 0,
-                'opsz' 24
-        }
-    </style>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "primary": "#135bec",
-              "background-light": "#f6f6f8",
-              "background-dark": "#101622",
-            },
-            fontFamily: {
-              "display": ["Space Grotesk", "sans-serif"]
-            },
-            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
-          },
-        },
-      }
-    </script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saskia Adriana - Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Removed Google Fonts link as we are using local fonts -->
 </head>
-<body class="font-display">
-<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
-<div class="px-4 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
-<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-<!-- TopNavBar -->
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-gray-800 px-6 sm:px-10 py-4">
-<div class="flex items-center gap-4 text-slate-900 dark:text-slate-100">
-<div class="size-6 text-primary">
-<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path clip-rule="evenodd" d="M24 4H6V17.3333V30.6667H24V44H42V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-<h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">John Doe</h2>
-</div>
-<div class="hidden md:flex flex-1 justify-end gap-8">
-<div class="flex items-center gap-9">
-<a class="text-sm font-medium leading-normal text-slate-800 dark:text-slate-200 hover:text-primary dark:hover:text-primary" href="otherprojects.html">Work</a>
-<a class="text-sm font-medium leading-normal text-slate-800 dark:text-slate-200 hover:text-primary dark:hover:text-primary" href="aboutme.html">About</a>
-<a class="text-sm font-medium leading-normal text-slate-800 dark:text-slate-200 hover:text-primary dark:hover:text-primary" href="#">Contact</a>
-</div>
-<div class="flex gap-2">
-<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-gray-200 dark:bg-gray-800 text-slate-900 dark:text-slate-100 hover:bg-primary/20 dark:hover:bg-primary/20 gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
-<span class="material-symbols-outlined text-xl">
-                                        public
-                                    </span>
-</button>
-<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-gray-200 dark:bg-gray-800 text-slate-900 dark:text-slate-100 hover:bg-primary/20 dark:hover:bg-primary/20 gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
-<span class="material-symbols-outlined text-xl">
-                                        alternate_email
-                                    </span>
-</button>
-</div>
-</div>
-<button class="md:hidden flex items-center justify-center rounded-lg h-10 w-10 bg-gray-200 dark:bg-gray-800 text-slate-900 dark:text-slate-100">
-<span class="material-symbols-outlined">
-                                menu
-                            </span>
-</button>
-</header>
-<!-- HeroSection -->
-<main class="flex-1">
-<div class="@container">
-<div class="flex flex-col gap-6 px-4 py-16 sm:py-20 @[864px]:flex-row @[864px]:items-center">
-<div class="flex flex-col gap-6 @[480px]:gap-8 @[864px]:justify-center">
-<div class="flex flex-col gap-4 text-left">
-<h1 class="text-slate-900 dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-6xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
-                                            Designing Digital Experiences
-                                        </h1>
-<h2 class="text-slate-600 dark:text-slate-400 text-base font-normal leading-normal @[480px]:text-lg @[480px]:font-normal @[480px]:leading-normal">
-                                            A passionate UI/UX designer creating intuitive and engaging products for users.
-                                        </h2>
-</div>
-<div class="flex-wrap gap-3 flex">
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em]">
-<span class="truncate">View My Work</span>
-</button>
-<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-gray-200 dark:bg-gray-800 text-slate-900 dark:text-slate-100 text-base font-bold leading-normal tracking-[0.015em]">
-<span class="truncate">Get in Touch</span>
-</button>
-</div>
-</div>
-<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl @[864px]:w-2/5 @[864px]:flex-shrink-0" data-alt="Abstract colorful gradient shapes" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCNlZ9sUtGgRb8NuoULzhptCGTgwthwCs44De1ii8Tlp5WYs6d__19MEcQzyYNE3hCbWDHVI5dcWdMbpx-Swz995Tnim7uqJTAY-P4ettn8Qh_PezW32a3fsVcS6bFbReZWpgXHjb2AkeMOlF5XKeMBwpVILX1rLs-f4AbfvBtBR7jrqKpa1PtNKYzmQL-7jsQE0igGHZpm1VGoF76AVBZWrk1Jfbk35Dwa4x7VDNg-dhyb81vbPEc1v0ysdgUkRX8_Ti_BFxD2EbA");'></div>
-</div>
-</div>
-<!-- ImageGrid -->
-<div class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-6 p-4">
-<div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-6 aspect-[3/4] group cursor-pointer" data-alt="Abstract design of an e-commerce platform interface" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 40%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCZLGB28KhkIiFyfFs5DfX2jDIK78KYNF1c7cpTvmbm9GZZbmkSeW9y1eo45SEYjRpbG_YOrgCUyTXkK-IkjlqpVnuKMnPoN6qV03jWUQmE5j-k1IcDpi743ZblfCi_Z71E23hiANAmJM5yaScWleJ4CfR1SQiYUXZJu2Ai4xFudynsstBdxGORoJJs6N9E_oXgJJmqC9UgtUKQQPANMUT0z2QVwdZkPYzcAkBlNnMkHLK0ZLYSCoAS-sUuQ3kukh_AmEQH580BGws");'>
-<p class="text-white text-xl font-bold leading-tight line-clamp-3">E-commerce Redesign</p>
-<p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity">UI/UX, Web Design</p>
-</div>
-<div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-6 aspect-[3/4] group cursor-pointer" data-alt="Mockup of a mobile banking application" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 40%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAf0h0EUKk2sXdeRncemepvsMR7XJhviRqUejzW8CdFM0XS1YdpArKkx_7UGy-sGRAevYW4J8wI0oagZKkWJz4CuwVNhlyIrOm_r5z4M_NYZQb-7DP7nPc-i2B0DQtgja6Tk02RS4LO2U6_SVQ5uV7vaaQLZYX9bYupgIb4FPsMgiNp5LqqsMjAc1ctBj6BfM6eC3hqh6PvpwKEcQnNfXU8SiTPRfYlKW3Zr2xqzTLE7q0K0rjrGHuPhx771puiBKzf1PPI8ezA-3Q");'>
-<p class="text-white text-xl font-bold leading-tight line-clamp-3">Mobile Banking App</p>
-<p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity">Mobile App, Fintech</p>
-</div>
-<div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-6 aspect-[3/4] group cursor-pointer" data-alt="Dashboard view of a SaaS application" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 40%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAV5LD5QO4LUnplkSnsxr8DziEIZ6nBp3fWJ1mF-BN_AuGAwCHZIo3-ZXFoqxg6yWzeajahW6YBWDdIUizdhQxOylwSF59yOTfwZ-W0Jf-5031nMIFDYRueRftXHw_ClAj88agnDnwJE8Fi8qznB4moFUrzIfISTnjpRNcTAr2TY5-iksE2ru1ggmNZGNw9hf9lFIUTs8YM9eRhABgNElzIhMOKRVuhMnTBgrvPiguEU5qJKjhmafow5w0PN_2eEy1FjH_H1KNdQ_I");'>
-<p class="text-white text-xl font-bold leading-tight line-clamp-3">SaaS Dashboard UX</p>
-<p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity">UX Research, UI Design</p>
-</div>
-<div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-6 aspect-[3/4] group cursor-pointer" data-alt="Screens from a healthcare platform application" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 40%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDR1FsH-S9lwdnQNApaabd8RDFSYqOtxEzKYUqRkcl8xPTuezjomibsqN7r4Q-jy_uDbUw8FZ3GJmu9GvY2v38aXCdmpWTTlszdllEGB7U_nca7DDLWuxiqCQgzN38K9aHmSgoyOrhwWZqBO5q2hh2dErvxmO8dAPb9CtVvj9yGrh1sypZLqd8SCyBAZ-YiKZI7mgqo-HcdfKu9OdvEKlZ4GBrdVAsRcJH4pVy0aQzlDCNxJod5QTIVvXCDLDb6ICNA22iGPM9Pfyk");'>
-<p class="text-white text-xl font-bold leading-tight line-clamp-3">Healthcare Platform</p>
-<p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity">Healthcare, Prototyping</p>
-</div>
-<div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-6 aspect-[3/4] group cursor-pointer" data-alt="Design of a travel booking website" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 40%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAcFPDi-h0OVhlp61xt0I8KWlbledqCBUyf8sK6qcbJwETDM6nJ9jyKvQlSpOaGl3z6rfCY3TVrljSIIFxTvO05_9hnuce-KKAyuEGFmpvEx_xqPpRGLFZuSyyjeIR1INLdJ-8zwWRqvvqpp4L9Vy96tiDK1PlYrE6u34G-0E_fPyhDlDLBj2lZpLrSrmJbMEpc7bW55a4R4mHeOttJzUnC5rERqavUNbawotINnJgGEcXkKmTHo_83pwVjzyA8PgkwuyqLtxdglZ0");'>
-<p class="text-white text-xl font-bold leading-tight line-clamp-3">Travel Booking Site</p>
-<p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity">Web Design, Travel</p>
-</div>
-<div class="bg-cover bg-center flex flex-col gap-3 rounded-xl justify-end p-6 aspect-[3/4] group cursor-pointer" data-alt="Conceptual design of a social media app" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 40%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAT9m_UJYF4LrYdk9khY0LHDt8CBYHt3mpQeLGBRTeSSjgI88tjr6Wgr7yroXjhGSfR-NlDEs4bhSR3IoR3zKJgow4BYnkO4ggQa5kVW_xurS6Iy7v_fmtKR_9LgTp2zi0SqbAJz5LNmD9ySz8ZP5oTR8t7xDDa7DuVuQUqXdtbWmREow0TzA1c4EPcxVlUjKzUyZxev2cnEnxKtffoYmnPTgNjHxBugJv1aOBK-Cb3nogAlRVxm3zVayowvgmS00HxH1Bjj-N3Og8");'>
-<p class="text-white text-xl font-bold leading-tight line-clamp-3">Social Media App Concept</p>
-<p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity">Concept, Mobile App</p>
-</div>
-</div>
-</main>
-<!-- Footer -->
-<footer class="flex flex-col gap-8 px-5 py-16 text-center @container border-t border-solid border-gray-200 dark:border-gray-800 mt-16">
-<div class="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-6 sm:gap-10">
-<a class="text-slate-600 dark:text-slate-400 text-base font-normal leading-normal hover:text-primary dark:hover:text-primary" href="#">Work</a>
-<a class="text-slate-600 dark:text-slate-400 text-base font-normal leading-normal hover:text-primary dark:hover:text-primary" href="#">About</a>
-<a class="text-slate-600 dark:text-slate-400 text-base font-normal leading-normal hover:text-primary dark:hover:text-primary" href="#">Contact</a>
-</div>
-<div class="flex flex-wrap justify-center gap-6">
-<a class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary" href="#">
-<span class="material-symbols-outlined !text-2xl">mail</span>
-</a>
-<a class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary" href="#">
-<span class="material-symbols-outlined !text-2xl">public</span>
-</a>
-<a class="text-slate-500 dark:text-slate-400 hover:text-primary dark:hover:text-primary" href="#">
-<span class="material-symbols-outlined !text-2xl">apps</span>
-</a>
-</div>
-<p class="text-slate-500 dark:text-slate-400 text-sm font-normal leading-normal">© 2024 John Doe. All rights reserved.</p>
-</footer>
-</div>
-</div>
-</div>
-</div>
-</body></html>
+
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <div class="logo">
+        <span class="uppercase">Saskia Adriana</span>
+        <span class="logo-line"></span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#work" class="uppercase">Work</a></li>
+          <li><a href="#playground" class="uppercase">Playground</a></li>
+          <li><a href="#about" class="uppercase">About</a></li>
+          <li><a href="#contact" class="uppercase">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Status -->
+    <div class="status">
+      <p>2025 • <span>Available for work</span></p>
+    </div>
+  </div>
+
+  <!-- Decorative Bars (Full Width) -->
+  <div class="art-bars">
+    <span class="bar bar-1"></span>
+    <span class="bar bar-1"></span> <!-- Extra thin line -->
+    <span class="bar bar-2"></span>
+    <span class="bar bar-3"></span>
+    <span class="bar bar-4"></span>
+    <span class="bar bar-5"></span>
+    <span class="bar bar-6"></span>
+  </div>
+
+  <div class="container">
+    <!-- Hero Content -->
+    <section class="hero-content">
+      <h1 class="hero-title">
+        <span class="uppercase">[UI DESIGN]</span>
+        <span class="uppercase">[UX DESIGN]</span>
+      </h1>
+      <p class="hero-description">
+        I design thoughtful, human-centered products by turning complex problems into clear, meaningful experiences.
+      </p>
+    </section>
+  </div>
+
+</body>
+
+</html>

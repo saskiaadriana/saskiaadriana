@@ -1,0 +1,297 @@
+/* Font Faces */
+
+/* Thunder - Header Font */
+@font-face {
+    font-family: 'Thunder';
+    src: url('fonts/Thunder-HC.ttf') format('truetype');
+    font-weight: 400;
+    /* Regular */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Thunder';
+    src: url('fonts/Thunder-BoldHC.ttf') format('truetype');
+    font-weight: 700;
+    /* Bold */
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Thunder';
+    src: url('fonts/Thunder-ExtraBoldHC.ttf') format('truetype');
+    font-weight: 800;
+    /* Extra Bold */
+    font-style: normal;
+}
+
+/* Roboto - Body Font */
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-Italic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+:root {
+    /* --- Design System: Color Tokens --- */
+
+    /* Orange Palette */
+    --orange-10: #FCEEE9;
+    --orange-20: #F7D5C9;
+    --orange-30: #F1B39D;
+    --orange-40: #EA9071;
+    --orange-50: #E36D45;
+    --orange-60: #D34D20;
+    --orange-70: #A83D1A;
+    --orange-80: #7C2D13;
+
+    /* Grayscale Palette */
+    --gray-10: #F6F4F4;
+    --gray-20: #ECEAEA;
+    --gray-30: #DBD8D7;
+    --gray-40: #B4AEAC;
+    --gray-50: #837A77;
+    --gray-60: #4E4846;
+    --gray-70: #362E2B;
+    --gray-80: #181818;
+
+    /* Semantic Variables */
+    --color-text-main: var(--gray-80);
+    --color-text-secondary: var(--gray-60);
+    --color-bg: #ffffff;
+    /* Keeping pure white for main bg, or use --gray-10 for off-white */
+    --color-primary: var(--orange-60);
+
+    /* Font Variables */
+    --font-header: 'Thunder', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+
+    --spacing-unit: 1rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    overflow-x: hidden;
+    line-height: 1.4;
+}
+
+/* Typography Utility */
+.uppercase {
+    text-transform: uppercase;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.italic {
+    font-style: italic;
+}
+
+/* Layout Grid */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 4vw;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 0;
+    font-family: var(--font-header);
+    font-weight: 800;
+    font-size: 2.5rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.logo-line {
+    height: 4px;
+    width: 250px;
+    background-color: var(--orange-60);
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-text-main);
+    font-weight: 700;
+    font-size: 2rem;
+    position: relative;
+    transition: color 0.3s ease;
+    font-family: var(--font-header);
+}
+
+nav a:hover {
+    color: var(--color-primary);
+}
+
+/* Status Section */
+.status {
+    padding: 2rem 0 4rem;
+    font-size: 1rem;
+    color: var(--gray-60);
+}
+
+.status span {
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+/* Decorative Bars */
+.art-bars {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5vh;
+    margin-bottom: 6rem;
+}
+
+.bar {
+    width: 100%;
+    display: block;
+}
+
+/* Updated Bar Colors using Tokens */
+.bar-1 {
+    height: 4px;
+    background-color: var(--orange-10);
+}
+
+.bar-2 {
+    height: 8px;
+    background-color: var(--orange-20);
+    opacity: 1;
+    /* Removed opacity to let color exactness shine */
+}
+
+.bar-3 {
+    height: 16px;
+    background-color: var(--orange-30);
+}
+
+.bar-4 {
+    height: 24px;
+    background-color: var(--orange-40);
+}
+
+.bar-5 {
+    height: 42px;
+    background-color: var(--orange-50);
+}
+
+.bar-6 {
+    height: 80px;
+    background-color: var(--orange-60);
+}
+
+/* Hero Content */
+.hero-content {
+    padding-bottom: 8rem;
+}
+
+.hero-title {
+    font-family: var(--font-header);
+    font-size: 8rem;
+    font-weight: 800;
+    line-height: 0.85;
+    letter-spacing: 0.02em;
+    margin-bottom: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.hero-description {
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    max-width: 600px;
+    color: var(--gray-50);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    header {
+        font-size: 2rem;
+        padding: 2rem 0;
+    }
+
+    nav a {
+        font-size: 1.5rem;
+    }
+
+    .logo-line {
+        width: 100px;
+    }
+
+    .hero-title {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
+    }
+
+    .logo-line {
+        display: none;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .hero-title {
+        font-size: 3.5rem;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .bar-6 {
+        height: 50px;
+    }
+}
