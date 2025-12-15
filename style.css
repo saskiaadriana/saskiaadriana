@@ -104,28 +104,32 @@ body {
     font-family: var(--font-header);
     font-weight: 600;
     font-size: 128px;
-    line-height: auto;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
 }
 
 .text-header-96 {
     font-family: var(--font-header);
     font-weight: 600;
     font-size: 96px;
-    line-height: auto;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
 }
 
 .text-header-64 {
     font-family: var(--font-header);
     font-weight: 600;
     font-size: 64px;
-    line-height: auto;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
 }
 
 .text-header-48 {
     font-family: var(--font-header);
     font-weight: 600;
     font-size: 48px;
-    line-height: auto;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
 }
 
 /* Subheaders (Roboto) */
@@ -136,15 +140,12 @@ body {
     line-height: auto;
 }
 
-/* Note: Request said Roboto SemiBold for subheader/40/bold name, but usually Bold token implies Bold weight. Request: "Subheader/40/Bold = font: Roboto SemiBold". I will follow specific instruction: Roboto SemiBold. */
 .text-subheader-40-bold-real {
     font-family: var(--font-body);
     font-weight: 600;
     font-size: 40px;
     line-height: auto;
 }
-
-/* Using 600 per request description "Roboto SemiBold" */
 
 .text-subheader-24-extrabold {
     font-family: var(--font-body);
@@ -270,12 +271,11 @@ body {
 }
 
 
-/* --- Layout & Components using Tokens --- */
+/* --- Layout & Components --- */
 
 .container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 4vw;
+    width: 100%;
+    padding: 0 28px;
 }
 
 /* Header */
@@ -284,12 +284,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 3rem 0;
-    /* Applied Token: Header/48/SemiBold */
-    font-family: var(--font-header);
-    font-weight: 600;
-    font-size: 48px;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
+    /* Removed typography */
 }
 
 .logo {
@@ -298,12 +293,7 @@ header {
     gap: 2rem;
 }
 
-.logo-line {
-    height: 4px;
-    width: 250px;
-    background-color: var(--orange-60);
-    display: block;
-}
+
 
 nav ul {
     list-style: none;
@@ -314,17 +304,9 @@ nav ul {
 nav a {
     text-decoration: none;
     color: var(--color-text-main);
-    /* Applied Token: Header/48/SemiBold, scaled down slightly for nav or kept same? 
-       Design looks slightly smaller than logo. Let's strictly follow available tokens.
-       Closest logic is Header/48 or Header/64. Let's use 32px (custom) or fit to token. 
-       Let's stick to Header/48/SemiBold concept but maybe resize if needed, 
-       or use a smaller Header token if 48 is too big. 
-       Actually, previous was 2rem (32px). Let's use Header/48/SemiBold reduced or just use the token.*/
-    font-family: var(--font-header);
-    font-weight: 600;
-    font-size: 48px;
     position: relative;
     transition: color 0.3s ease;
+    /* Removed typography */
 }
 
 nav a:hover {
@@ -333,17 +315,12 @@ nav a:hover {
 
 /* Status Section */
 .status {
-    padding: 2rem 0 4rem;
+    /* Removed padding to let flex gap handle it, added width 100% to work with container class */
+    width: 100%;
     color: var(--gray-60);
 }
 
-.status p {
-    /* Applied Token: Body/16/Regular */
-    font-family: var(--font-body);
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-}
+
 
 .status span {
     font-style: italic;
@@ -354,7 +331,8 @@ nav a:hover {
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 1.5vh;
+    gap: 24px;
+    /* Updated gap */
     margin-bottom: 6rem;
 }
 
@@ -400,13 +378,7 @@ nav a:hover {
 }
 
 .hero-title {
-    /* Applied Token: Header/128/SemiBold */
-    font-family: var(--font-header);
-    font-size: 128px;
-    font-weight: 600;
-    line-height: 1.1;
-    /* auto/normal usually ~1.2 but for headers often tighter. Request said 'auto'. */
-    letter-spacing: 0.02em;
+    /* REMOVED typography properties to allow tokens (text-header-*) to work */
     margin-bottom: 1.5rem;
     display: flex;
     gap: 1rem;
@@ -414,34 +386,31 @@ nav a:hover {
 }
 
 .hero-description {
-    /* Applied Token: Body/24/Regular */
-    font-family: var(--font-body);
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 32px;
+    /* REMOVED typography properties to allow tokens (text-body-*) to work */
     max-width: 600px;
     color: var(--gray-50);
 }
 
-/* Responsive Overrides (Mapping to smaller tokens) */
+/* Responsive Overrides */
+/* 
+   NOTE: Typography responsiveness should technically be handled by responsive tokens or media queries modifying the tokens.
+   For now, we will override specific classes if needed, or rely on the HTML classes to be swapped via JS (complex) or media queries here.
+   But since we use utility classes in HTML, we might need responsive utility classes like 'md:text-header-64'.
+   Given the setup, simpler approach is maintaining basic responsive scaling here for the MAIN structural components if they don't break the rules.
+   However, strictly speaking, 'text-header-48' implies 48px ALWAYS. 
+   Adjusting approach: Retain component-level media queries for layout reflows, but avoid overriding font-size unless necessary or if the token system allows responsive behavior.
+   User asked for specific token application. I will leave resizing logic minimal or as overrides to the utility if essential for mobile (like hero title not overflowing). 
+*/
+
 @media (max-width: 1024px) {
-    header {
-        font-size: 32px;
-        /* fallback */
-    }
-
-    nav a {
-        font-size: 32px;
-    }
-
     .logo-line {
         width: 100px;
     }
 
-    .hero-title {
-        font-size: 96px;
-        /* Header/96/SemiBold */
-    }
+    /* We might need to manually scale down very large headers on tablet if 128px/96px is too big. 
+       Can override the component for safety. 
+    */
+
 }
 
 @media (max-width: 768px) {
@@ -461,8 +430,6 @@ nav a:hover {
     }
 
     .hero-title {
-        font-size: 64px;
-        /* Header/64/SemiBold */
         flex-direction: column;
         gap: 0;
     }
