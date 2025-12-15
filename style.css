@@ -1,35 +1,33 @@
 /* Font Faces */
 
-/* Thunder - Header Font */
+/* Thunder LC Variants */
 @font-face {
     font-family: 'Thunder';
-    src: url('fonts/Thunder-HC.ttf') format('truetype');
-    font-weight: 400;
-    /* Regular */
+    src: url('fonts/Thunder-SemiBoldLC.ttf') format('truetype');
+    font-weight: 600;
+    /* SemiBold */
     font-style: normal;
 }
 
-@font-face {
-    font-family: 'Thunder';
-    src: url('fonts/Thunder-BoldHC.ttf') format('truetype');
-    font-weight: 700;
-    /* Bold */
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Thunder';
-    src: url('fonts/Thunder-ExtraBoldHC.ttf') format('truetype');
-    font-weight: 800;
-    /* Extra Bold */
-    font-style: normal;
-}
-
-/* Roboto - Body Font */
+/* Roboto Variants */
 @font-face {
     font-family: 'Roboto';
     src: url('fonts/Roboto-Regular.ttf') format('truetype');
     font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/Roboto-SemiBold.ttf') format('truetype');
+    font-weight: 600;
     font-style: normal;
 }
 
@@ -42,6 +40,13 @@
 
 @font-face {
     font-family: 'Roboto';
+    src: url('fonts/Roboto-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto';
     src: url('fonts/Roboto-Italic.ttf') format('truetype');
     font-weight: 400;
     font-style: italic;
@@ -49,8 +54,6 @@
 
 :root {
     /* --- Design System: Color Tokens --- */
-
-    /* Orange Palette */
     --orange-10: #FCEEE9;
     --orange-20: #F7D5C9;
     --orange-30: #F1B39D;
@@ -60,7 +63,6 @@
     --orange-70: #A83D1A;
     --orange-80: #7C2D13;
 
-    /* Grayscale Palette */
     --gray-10: #F6F4F4;
     --gray-20: #ECEAEA;
     --gray-30: #DBD8D7;
@@ -70,14 +72,11 @@
     --gray-70: #362E2B;
     --gray-80: #181818;
 
-    /* Semantic Variables */
     --color-text-main: var(--gray-80);
     --color-text-secondary: var(--gray-60);
     --color-bg: #ffffff;
-    /* Keeping pure white for main bg, or use --gray-10 for off-white */
     --color-primary: var(--orange-60);
 
-    /* Font Variables */
     --font-header: 'Thunder', sans-serif;
     --font-body: 'Roboto', sans-serif;
 
@@ -98,20 +97,181 @@ body {
     line-height: 1.4;
 }
 
-/* Typography Utility */
-.uppercase {
-    text-transform: uppercase;
+/* --- Typography Tokens --- */
+
+/* Headers (Thunder SemiBold LC) */
+.text-header-128 {
+    font-family: var(--font-header);
+    font-weight: 600;
+    font-size: 128px;
+    line-height: auto;
 }
 
-.bold {
+.text-header-96 {
+    font-family: var(--font-header);
+    font-weight: 600;
+    font-size: 96px;
+    line-height: auto;
+}
+
+.text-header-64 {
+    font-family: var(--font-header);
+    font-weight: 600;
+    font-size: 64px;
+    line-height: auto;
+}
+
+.text-header-48 {
+    font-family: var(--font-header);
+    font-weight: 600;
+    font-size: 48px;
+    line-height: auto;
+}
+
+/* Subheaders (Roboto) */
+.text-subheader-40-bold {
+    font-family: var(--font-body);
     font-weight: 700;
+    font-size: 40px;
+    line-height: auto;
 }
 
-.italic {
-    font-style: italic;
+/* Note: Request said Roboto SemiBold for subheader/40/bold name, but usually Bold token implies Bold weight. Request: "Subheader/40/Bold = font: Roboto SemiBold". I will follow specific instruction: Roboto SemiBold. */
+.text-subheader-40-bold-real {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 40px;
+    line-height: auto;
 }
 
-/* Layout Grid */
+/* Using 600 per request description "Roboto SemiBold" */
+
+.text-subheader-24-extrabold {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: 24px;
+    line-height: auto;
+}
+
+.text-subheader-24-bold {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: auto;
+}
+
+.text-subheader-24-medium {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 24px;
+    line-height: auto;
+}
+
+/* Body (Roboto) */
+.text-body-24-bold {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.text-body-24-semibold {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.text-body-24-regular {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.text-body-16-bold {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.text-body-16-semibold {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.text-body-16-regular {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.text-body-14-bold {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.text-body-14-semibold {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.text-body-14-regular {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.text-body-12-bold {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.text-body-12-semibold {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.text-body-12-regular {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+/* Button */
+.text-button-16-medium {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 16px;
+    line-height: normal;
+}
+
+/* Link */
+.text-link-16-bold {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 32px;
+    text-decoration: underline;
+}
+
+
+/* --- Layout & Components using Tokens --- */
+
 .container {
     max-width: 1400px;
     margin: 0 auto;
@@ -124,9 +284,10 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 3rem 0;
+    /* Applied Token: Header/48/SemiBold */
     font-family: var(--font-header);
-    font-weight: 800;
-    font-size: 2.5rem;
+    font-weight: 600;
+    font-size: 48px;
     letter-spacing: 0.02em;
     text-transform: uppercase;
 }
@@ -153,11 +314,17 @@ nav ul {
 nav a {
     text-decoration: none;
     color: var(--color-text-main);
-    font-weight: 700;
-    font-size: 2rem;
+    /* Applied Token: Header/48/SemiBold, scaled down slightly for nav or kept same? 
+       Design looks slightly smaller than logo. Let's strictly follow available tokens.
+       Closest logic is Header/48 or Header/64. Let's use 32px (custom) or fit to token. 
+       Let's stick to Header/48/SemiBold concept but maybe resize if needed, 
+       or use a smaller Header token if 48 is too big. 
+       Actually, previous was 2rem (32px). Let's use Header/48/SemiBold reduced or just use the token.*/
+    font-family: var(--font-header);
+    font-weight: 600;
+    font-size: 48px;
     position: relative;
     transition: color 0.3s ease;
-    font-family: var(--font-header);
 }
 
 nav a:hover {
@@ -167,13 +334,19 @@ nav a:hover {
 /* Status Section */
 .status {
     padding: 2rem 0 4rem;
-    font-size: 1rem;
     color: var(--gray-60);
+}
+
+.status p {
+    /* Applied Token: Body/16/Regular */
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
 }
 
 .status span {
     font-style: italic;
-    font-size: 1.1rem;
 }
 
 /* Decorative Bars */
@@ -190,7 +363,6 @@ nav a:hover {
     display: block;
 }
 
-/* Updated Bar Colors using Tokens */
 .bar-1 {
     height: 4px;
     background-color: var(--orange-10);
@@ -200,7 +372,6 @@ nav a:hover {
     height: 8px;
     background-color: var(--orange-20);
     opacity: 1;
-    /* Removed opacity to let color exactness shine */
 }
 
 .bar-3 {
@@ -229,10 +400,12 @@ nav a:hover {
 }
 
 .hero-title {
+    /* Applied Token: Header/128/SemiBold */
     font-family: var(--font-header);
-    font-size: 8rem;
-    font-weight: 800;
-    line-height: 0.85;
+    font-size: 128px;
+    font-weight: 600;
+    line-height: 1.1;
+    /* auto/normal usually ~1.2 but for headers often tighter. Request said 'auto'. */
     letter-spacing: 0.02em;
     margin-bottom: 1.5rem;
     display: flex;
@@ -241,23 +414,24 @@ nav a:hover {
 }
 
 .hero-description {
+    /* Applied Token: Body/24/Regular */
     font-family: var(--font-body);
-    font-size: 1.25rem;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
     max-width: 600px;
     color: var(--gray-50);
-    font-weight: 400;
-    line-height: 1.5;
 }
 
-/* Responsive */
+/* Responsive Overrides (Mapping to smaller tokens) */
 @media (max-width: 1024px) {
     header {
-        font-size: 2rem;
-        padding: 2rem 0;
+        font-size: 32px;
+        /* fallback */
     }
 
     nav a {
-        font-size: 1.5rem;
+        font-size: 32px;
     }
 
     .logo-line {
@@ -265,7 +439,8 @@ nav a:hover {
     }
 
     .hero-title {
-        font-size: 5rem;
+        font-size: 96px;
+        /* Header/96/SemiBold */
     }
 }
 
@@ -286,7 +461,8 @@ nav a:hover {
     }
 
     .hero-title {
-        font-size: 3.5rem;
+        font-size: 64px;
+        /* Header/64/SemiBold */
         flex-direction: column;
         gap: 0;
     }
@@ -294,4 +470,9 @@ nav a:hover {
     .bar-6 {
         height: 50px;
     }
+}
+
+/* Utility Class Helpers */
+.uppercase {
+    text-transform: uppercase;
 }
