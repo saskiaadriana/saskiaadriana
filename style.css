@@ -89,16 +89,18 @@
     box-sizing: border-box;
 }
 
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--font-body);
     background-color: var(--color-bg);
     color: var(--color-text-main);
-    overflow-x: hidden;
+    overflow: hidden;
     line-height: 1.4;
-    min-height: 100vh;
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
+    height: 100%;
 }
 
 /* --- Typography Tokens --- */
@@ -277,6 +279,47 @@ body {
 
 /* --- Layout & Components --- */
 
+/* Scroll Snap Container */
+.scroll-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+.scroll-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background: var(--gray-70);
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background: var(--gray-40);
+    border-radius: 4px;
+}
+
+/* Snap Sections */
+.snap-section {
+    height: 100vh;
+    width: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hero-section {
+    padding-top: 160px;
+}
+
+.works-section {
+    padding-top: 160px;
+    justify-content: flex-start;
+}
+
 .container {
     width: 100%;
     padding: 0 28px;
@@ -336,8 +379,6 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    /* Updated gap */
-    margin-bottom: 6rem;
 }
 
 .bar {
@@ -419,9 +460,9 @@ nav a:hover {
 
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 2rem;
+        /* flex-direction: column; */
+        /* align-items: flex-start; */
+        /* gap: 2rem; */
     }
 
     .logo-line {
