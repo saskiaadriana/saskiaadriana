@@ -65,11 +65,115 @@
     <section class="snap-section works-section">
       <div class="container">
         <h2 class="text-header-64 uppercase">[SELECTED WORKS]</h2>
-        <p class="text-body-24-regular">Content goes here...</p>
       </div>
+
+      <!-- Carousel -->
+      <div class="carousel-container">
+        <button class="carousel-btn carousel-btn-prev" id="prevBtn" aria-label="Previous slide">
+          <img src="images/chevron-left.svg" alt="Previous">
+        </button>
+
+        <div class="carousel-wrapper">
+          <div class="carousel-track" id="carouselTrack">
+            <!-- Slide 1 -->
+            <div class="carousel-slide">
+              <div class="slide-image" style="background-image: url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&q=80');">
+                <button class="slide-btn">View Project</button>
+              </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-slide">
+              <div class="slide-image" style="background-image: url('https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=1200&q=80');">
+                <button class="slide-btn">View Project</button>
+              </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="carousel-slide">
+              <div class="slide-image" style="background-image: url('https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=1200&q=80');">
+                <button class="slide-btn">View Project</button>
+              </div>
+            </div>
+            <!-- Slide 4 -->
+            <div class="carousel-slide">
+              <div class="slide-image" style="background-image: url('https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&q=80');">
+                <button class="slide-btn">View Project</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-btn carousel-btn-next" id="nextBtn" aria-label="Next slide">
+          <img src="images/chevron-right.svg" alt="Next">
+        </button>
+      </div>
+
+      <!-- Carousel Dots -->
+      <div class="carousel-dots" id="carouselDots"></div>
     </section>
 
   </div>
+
+  <!-- Carousel JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const track = document.getElementById('carouselTrack');
+      const slides = document.querySelectorAll('.carousel-slide');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const dotsContainer = document.getElementById('carouselDots');
+
+      let currentIndex = 0;
+      const totalSlides = slides.length;
+
+      // Create dots
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('button');
+        dot.classList.add('carousel-dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+      }
+
+      const dots = document.querySelectorAll('.carousel-dot');
+
+      function updateCarousel() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        // Update dots
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === currentIndex);
+        });
+      }
+
+      function goToSlide(index) {
+        currentIndex = index;
+        updateCarousel();
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+      }
+
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+      }
+
+      // Event listeners
+      nextBtn.addEventListener('click', nextSlide);
+      prevBtn.addEventListener('click', prevSlide);
+
+      // Keyboard navigation
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') {
+          prevSlide();
+        } else if (e.key === 'ArrowRight') {
+          nextSlide();
+        }
+      });
+    });
+  </script>
 
 </body>
 
