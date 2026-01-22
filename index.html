@@ -107,8 +107,8 @@
         </button>
       </div>
 
-      <!-- Carousel Dots -->
-      <div class="carousel-dots" id="carouselDots"></div>
+      <!-- Carousel Titles Navigation -->
+      <div class="carousel-titles" id="carouselTitles"></div>
     </section>
 
   </div>
@@ -120,28 +120,36 @@
       const slides = document.querySelectorAll('.carousel-slide');
       const prevBtn = document.getElementById('prevBtn');
       const nextBtn = document.getElementById('nextBtn');
-      const dotsContainer = document.getElementById('carouselDots');
+      const titlesContainer = document.getElementById('carouselTitles');
+
+      const projectTitles = [
+        'WAIS - THINK IN COLORS',
+        'COMPAST - A COMPOST ASSISTANT',
+        'SWARAGAM - PRESERVING TRADITION THROUGH DISCOVERY',
+        'PETJAM - TURNING CALORIES INTO CONNECTION'
+      ];
 
       let currentIndex = 0;
       const totalSlides = slides.length;
 
-      // Create dots
+      // Create title buttons
       for (let i = 0; i < totalSlides; i++) {
-        const dot = document.createElement('button');
-        dot.classList.add('carousel-dot');
-        if (i === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => goToSlide(i));
-        dotsContainer.appendChild(dot);
+        const titleBtn = document.createElement('button');
+        titleBtn.classList.add('carousel-title-btn');
+        if (i === 0) titleBtn.classList.add('active');
+        titleBtn.textContent = projectTitles[i];
+        titleBtn.addEventListener('click', () => goToSlide(i));
+        titlesContainer.appendChild(titleBtn);
       }
 
-      const dots = document.querySelectorAll('.carousel-dot');
+      const titleBtns = document.querySelectorAll('.carousel-title-btn');
 
       function updateCarousel() {
         track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-        // Update dots
-        dots.forEach((dot, index) => {
-          dot.classList.toggle('active', index === currentIndex);
+        // Update title buttons
+        titleBtns.forEach((btn, index) => {
+          btn.classList.toggle('active', index === currentIndex);
         });
       }
 
