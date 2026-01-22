@@ -11,48 +11,118 @@
 
 <body>
 
-  <div class="container">
-    <!-- Header -->
-    <header>
-      <div class="logo">
-        <span class="uppercase text-header-48">Saskia Adriana</span>
+  <!-- Scroll Snap Container -->
+  <div class="scroll-container">
+
+    <!-- SECTION 1: Home / Hero Section -->
+    <section class="snap-section hero-section">
+      <!-- HStack: Header with 28px padding -->
+      <header class="hero-header">
+        <div class="logo">
+          <span class="uppercase text-header-48">Saskia Adriana</span>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#work" class="uppercase text-header-48">Work</a></li>
+            <li><a href="#playground" class="uppercase text-header-48">Playground</a></li>
+            <li><a href="#about" class="uppercase text-header-48">About</a></li>
+            <li><a href="#contact" class="uppercase text-header-48">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- VStack: Status + Decorative Bars (full width) -->
+      <div class="art-bars-wrapper">
+        <div class="status-hstack">
+          <p class="text-body-16-regular">2025 • <span>Available for work</span></p>
+        </div>
+        <div class="art-bars">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+          <span class="bar bar-4"></span>
+          <span class="bar bar-5"></span>
+          <span class="bar bar-6"></span>
+        </div>
       </div>
-      <nav>
-        <ul>
-          <li><a href="#work" class="uppercase text-header-48">Work</a></li>
-          <li><a href="#playground" class="uppercase text-header-48">Playground</a></li>
-          <li><a href="#about" class="uppercase text-header-48">About</a></li>
-          <li><a href="#contact" class="uppercase text-header-48">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-  </div>
 
-  <!-- Decorative Bars (Full Width) with Status inside -->
-  <div class="art-bars">
-    <div class="status container">
-      <p class="text-body-16-regular">2025 • <span>Available for work</span></p>
-    </div>
-    <span class="bar bar-1"></span>
-    <span class="bar bar-1"></span> <!-- Extra thin line -->
-    <span class="bar bar-2"></span>
-    <span class="bar bar-3"></span>
-    <span class="bar bar-4"></span>
-    <span class="bar bar-5"></span>
-    <span class="bar bar-6"></span>
-  </div>
-
-  <div class="container">
-    <!-- Hero Content -->
-    <section class="hero-content">
-      <h1 class="hero-title text-header-48">
-        <span class="uppercase"> [UI DESIGN] </span>
-        <span class="uppercase"> [UX DESIGN] </span>
-      </h1>
-      <p class="hero-description text-body-24-regular">
-        I design thoughtful, human-centered products by turning complex problems into clear, meaningful experiences.
-      </p>
+      <!-- VStack: Hero Content with 28px padding -->
+      <div class="hero-content-wrapper">
+        <div class="hero-content">
+          <h1 class="hero-title text-header-48">
+            <span class="uppercase"> [UI DESIGN] </span>
+            <span class="uppercase"> [UX DESIGN] </span>
+          </h1>
+          <p class="hero-description text-body-24-regular">
+            I design thoughtful, human-centered products by turning complex problems into clear, meaningful experiences.
+          </p>
+        </div>
+      </div>
     </section>
+
+    <!-- SECTION 2: Selected Works -->
+    <section class="snap-section works-section" id="work">
+      <div class="works-container">
+        <div class="section-header">
+          <h2 class="text-header-64 uppercase">[SELECTED WORKS]</h2>
+        </div>
+
+        <!-- Featured Project Display -->
+        <div class="featured-work">
+          <!-- Left Navigation -->
+          <div class="nav-arrow nav-arrow-left">
+            <img src="images/chevron-left.svg" alt="Previous Project">
+          </div>
+
+          <!-- Project Background Image -->
+          <div class="project-background">
+            <img src="images/WAIS-Thumbnail.png" alt="WAIS Project">
+          </div>
+
+          <!-- Project Info Overlay -->
+          <div class="project-overlay">
+            <div class="project-info-left">
+              <div class="project-name">
+                <span class="uppercase text-header-128">WAIS</span>
+              </div>
+              <div class="project-tagline uppercase text-body-24-semibold">THINK IN COLORS</div>
+            </div>
+
+            <div class="project-details">
+              <div class="detail-block">
+                <div class="detail-label uppercase">Role</div>
+                <div class="detail-value">UX Designer & Illustrator</div>
+              </div>
+              <div class="detail-block">
+                <div class="detail-label uppercase">Timeline</div>
+                <div class="detail-value">Oct - Dec 2025</div>
+              </div>
+              <div class="tags-container">
+                <span class="tag primary">Product Design</span>
+                <span class="tag secondary">Research</span>
+                <span class="tag secondary">iOS</span>
+                <span class="tag secondary">UI/UX</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Navigation -->
+          <div class="nav-arrow nav-arrow-right">
+            <img src="images/chevron-right.svg" alt="Next Project">
+          </div>
+        </div>
+
+        <!-- Project List Footer -->
+        <div class="project-list">
+          <div class="project-item active">WAIS - THINK IN COLORS</div>
+          <div class="project-item">COMPAST - A COMPOST ASSISTANT</div>
+          <div class="project-item">SWARAGAM - PRESERVING TRADITION THROUGH DISCOVERY</div>
+          <div class="project-item">PETJAM - TURNING CALORIES INTO CONNECTION</div>
+        </div>
+      </div>
+    </section>
+
   </div>
 
 </body>
