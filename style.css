@@ -95,6 +95,10 @@ body {
     color: var(--color-text-main);
     overflow-x: hidden;
     line-height: 1.4;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 }
 
 /* --- Typography Tokens --- */
@@ -374,7 +378,7 @@ nav a:hover {
 
 /* Hero Content */
 .hero-content {
-    padding-bottom: 8rem;
+    padding-bottom: 28px;
 }
 
 .hero-title {
@@ -392,7 +396,7 @@ nav a:hover {
 }
 
 /* Responsive Overrides */
-/* 
+/*
    NOTE: Typography responsiveness should technically be handled by responsive tokens or media queries modifying the tokens.
    For now, we will override specific classes if needed, or rely on the HTML classes to be swapped via JS (complex) or media queries here.
    But since we use utility classes in HTML, we might need responsive utility classes like 'md:text-header-64'.
