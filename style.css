@@ -279,6 +279,24 @@ body {
 
 /* --- Layout & Components --- */
 
+/* Fixed Header */
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: var(--gray-80);
+    padding: 28px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
 /* Scroll Snap Container */
 .scroll-container {
     height: 100vh;
@@ -326,13 +344,6 @@ body {
 }
 
 /* Header */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 3rem 0;
-    /* Removed typography */
-}
 
 .logo {
     display: flex;
