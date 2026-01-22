@@ -113,6 +113,23 @@
 
   </div>
 
+  <!-- Header Scroll Script -->
+  <script>
+    const header = document.querySelector('.fixed-header');
+    const scrollContainer = document.querySelector('.scroll-container');
+    const worksSection = document.querySelector('.works-section');
+
+    scrollContainer.addEventListener('scroll', () => {
+      if (scrollContainer.scrollTop > 50) {
+        header.classList.add('scrolled');
+        worksSection.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+        worksSection.classList.remove('scrolled');
+      }
+    });
+  </script>
+
   <!-- Carousel JavaScript -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {

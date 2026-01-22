@@ -289,6 +289,11 @@ body {
     z-index: 1000;
     background-color: var(--gray-80);
     padding: 28px;
+    transition: padding 0.3s ease, background-color 0.3s ease;
+}
+
+.fixed-header .text-header-48 {
+    transition: font-size 0.3s ease, color 0.3s ease;
 }
 
 .header-container {
@@ -296,6 +301,17 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+}
+
+/* Header scrolled state */
+.fixed-header.scrolled {
+    padding: 14px 28px;
+    background-color: white;
+}
+
+.fixed-header.scrolled .text-header-48 {
+    color: var(--gray-60);
+    font-size: 32px;
 }
 
 /* Scroll Snap Container */
