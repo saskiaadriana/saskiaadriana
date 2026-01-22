@@ -74,6 +74,7 @@
 
     --color-text-main: var(--gray-20);
     --color-text-secondary: var(--gray-60);
+    --color-text-third: var(--orange-50);
     --color-bg: var(--gray-80);
     --color-primary: var(--orange-60);
 
@@ -618,4 +619,8 @@ nav a:hover {
 
 .carousel-dot:hover {
     background-color: var(--gray-40);
+}
+
+.selected-work {
+    color: var(--orange-60);
 }
