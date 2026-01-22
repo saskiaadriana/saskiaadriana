@@ -72,9 +72,9 @@
     --gray-70: #362E2B;
     --gray-80: #181818;
 
-    --color-text-main: var(--gray-80);
+    --color-text-main: var(--gray-20);
     --color-text-secondary: var(--gray-60);
-    --color-bg: #ffffff;
+    --color-bg: var(--gray-80);
     --color-primary: var(--orange-60);
 
     --font-header: 'Thunder', sans-serif;
