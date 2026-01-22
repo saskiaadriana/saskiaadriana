@@ -320,6 +320,7 @@ body {
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+    background-color: white;
 }
 
 .scroll-container::-webkit-scrollbar {
@@ -348,11 +349,18 @@ body {
 
 .hero-section {
     padding-top: 160px;
+    background-color: var(--gray-80);
 }
 
 .works-section {
     padding-top: 160px;
     justify-content: flex-start;
+    background-color: white;
+    transition: padding-top 0.3s ease;
+}
+
+.works-section.scrolled {
+    padding-top: 80px;
 }
 
 .container {
