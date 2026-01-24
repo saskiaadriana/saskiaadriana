@@ -478,9 +478,9 @@ nav a:hover {
    For now, we will override specific classes if needed, or rely on the HTML classes to be swapped via JS (complex) or media queries here.
    But since we use utility classes in HTML, we might need responsive utility classes like 'md:text-header-64'.
    Given the setup, simpler approach is maintaining basic responsive scaling here for the MAIN structural components if they don't break the rules.
-   However, strictly speaking, 'text-header-48' implies 48px ALWAYS. 
+   However, strictly speaking, 'text-header-48' implies 48px ALWAYS.
    Adjusting approach: Retain component-level media queries for layout reflows, but avoid overriding font-size unless necessary or if the token system allows responsive behavior.
-   User asked for specific token application. I will leave resizing logic minimal or as overrides to the utility if essential for mobile (like hero title not overflowing). 
+   User asked for specific token application. I will leave resizing logic minimal or as overrides to the utility if essential for mobile (like hero title not overflowing).
 */
 
 @media (max-width: 1024px) {
@@ -488,8 +488,8 @@ nav a:hover {
         width: 100px;
     }
 
-    /* We might need to manually scale down very large headers on tablet if 128px/96px is too big. 
-       Can override the component for safety. 
+    /* We might need to manually scale down very large headers on tablet if 128px/96px is too big.
+       Can override the component for safety.
     */
 
 }
@@ -562,19 +562,18 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
 }
 
 .slide-btn {
-    padding: 1rem 2.5rem;
-    background-color: var(--orange-60);
+    padding: 15rem 35rem;
+    /* background-color: var(--orange-60); */
     color: white;
     border: none;
     border-radius: 4px;
-    font-size: 16px;
     font-weight: 500;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
-    font-family: var(--font-body);
     opacity: 0;
 }
 
@@ -583,7 +582,7 @@ nav a:hover {
 }
 
 .slide-btn:hover {
-    background-color: var(--orange-70);
+    background-color: var(--orange-50);
     transform: scale(1.05);
 }
 
@@ -676,5 +675,5 @@ nav a:hover {
 }
 
 .selected-work {
-    color: var(--orange-60);
+    color: var(--orange-50);
 }
