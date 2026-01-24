@@ -628,6 +628,24 @@ nav a:hover {
     justify-content: center;
 }
 
+.role-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.role-tag {
+    color: var(--Grayscale-20, #ECEAEA);
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 1px;
+    padding: 4px 12px;
+    background-color: var(--orange-60);
+    width: auto;
+}
 .slide-content:hover .slide-btn {
     opacity: 1;
     background-color: var(--orange-60);
