@@ -101,7 +101,120 @@ body {
     color: var(--color-text-main);
     overflow: hidden;
     line-height: 1.4;
+    margin: 0;
+}
+
+/* ========================================
+   SCROLL SNAP CONTAINER
+   ======================================== */
+
+.scroll-container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+/* Force scroll-snap to work */
+html {
+    scroll-behavior: smooth;
+}
+
+.scroll-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-track {
+    background: var(--gray-10);
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+    background: var(--gray-40);
+    border-radius: 4px;
+}
+
+/* Snap Sections */
+.snap-section {
+    min-height: 100vh;
+    height: 100vh;
+    width: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Hero Section Wrappers with 28px padding */
+.hero-header {
+    display: flex;
+    padding: 28px;
+    justify-content: space-between;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.art-bars-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.status-hstack {
+    display: flex;
+    padding: 0 28px;
+    align-items: center;
+    gap: 10px;
+    align-self: stretch;
+}
+
+.hero-content-wrapper {
+    display: flex;
+    padding: 28px 28px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    flex: 1;
+}
+
+/* Hero Section - Dark Background */
+.hero-section {
+    background-color: var(--gray-80);
+    color: white;
+}
+
+.hero-section .text-header-48,
+.hero-section .text-body-24-regular,
+.hero-section .text-body-16-regular {
+    color: white;
+}
+
+.hero-section nav a {
+    color: white;
+}
+
+.hero-section nav a:hover {
+    color: var(--orange-40);
+}
+
+.hero-section .art-bars .bar {
+    opacity: 1;
+}
+
+/* Works Section - Light Background */
+.works-section {
+    background-color: var(--color-bg);
+}
+
+.works-container {
+    width: 100%;
     height: 100%;
+    padding: 28px !important;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow-y: auto;
 }
 
 /* --- Typography Tokens --- */
@@ -303,108 +416,18 @@ body {
 
 /* --- Layout & Components --- */
 
-/* Fixed Header */
-.fixed-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-    background-color: var(--gray-80);
-    padding: 28px;
-    transition: padding 0.3s ease, background-color 0.3s ease;
-}
-
-.fixed-header .text-header-48 {
-    transition: font-size 0.3s ease, color 0.3s ease;
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-/* Header scrolled state */
-.fixed-header.scrolled {
-    padding: 14px 28px;
-    background-color: white;
-}
-
-.fixed-header.scrolled .text-header-48 {
-    color: var(--gray-60);
-    font-size: 32px;
-}
-
-/* Scroll Snap Container */
-.scroll-container {
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-    background-color: white;
-}
-
-.scroll-container::-webkit-scrollbar {
-    width: 8px;
-}
-
-.scroll-container::-webkit-scrollbar-track {
-    background: var(--gray-70);
-}
-
-.scroll-container::-webkit-scrollbar-thumb {
-    background: var(--gray-40);
-    border-radius: 4px;
-}
-
-/* Snap Sections */
-.snap-section {
-    height: 100vh;
-    width: 100%;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.hero-section {
-    padding-top: 160px;
-    background-color: var(--gray-80);
-}
-
-.works-section {
-    padding-top: 160px;
-    justify-content: flex-start;
-    background-color: white;
-    transition: padding-top 0.3s ease;
-}
-
-.works-section.scrolled {
-    padding-top: 80px;
-}
-
-.container {
-    width: 100%;
-    padding: 0 28px;
-}
-
-/* Header */
-
+/* Logo */
 .logo {
     display: flex;
     align-items: center;
-    gap: 2rem;
 }
 
-
-
+/* Navigation HStack */
 nav ul {
     list-style: none;
     display: flex;
-    gap: 2.5rem;
+    align-items: center;
+    gap: 48px;
 }
 
 nav a {
@@ -412,7 +435,6 @@ nav a {
     color: var(--color-text-main);
     position: relative;
     transition: color 0.3s ease;
-    /* Removed typography */
 }
 
 nav a:hover {
@@ -420,15 +442,11 @@ nav a:hover {
 }
 
 /* Status Section */
-.status {
-    /* Removed padding to let flex gap handle it, added width 100% to work with container class */
-    width: 100%;
+.status-hstack {
     color: var(--gray-60);
 }
 
-
-
-.status span {
+.status-hstack span {
     font-style: italic;
 }
 
@@ -477,70 +495,14 @@ nav a:hover {
 }
 
 /* Hero Content */
-.hero-content {
-    padding-bottom: 28px;
-}
-
 .hero-title {
-    /* REMOVED typography properties to allow tokens (text-header-*) to work */
-    margin-bottom: 1.5rem;
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
 }
 
 .hero-description {
-    /* REMOVED typography properties to allow tokens (text-body-*) to work */
     max-width: 600px;
-    color: var(--gray-50);
-}
-
-/* Responsive Overrides */
-/*
-   NOTE: Typography responsiveness should technically be handled by responsive tokens or media queries modifying the tokens.
-   For now, we will override specific classes if needed, or rely on the HTML classes to be swapped via JS (complex) or media queries here.
-   But since we use utility classes in HTML, we might need responsive utility classes like 'md:text-header-64'.
-   Given the setup, simpler approach is maintaining basic responsive scaling here for the MAIN structural components if they don't break the rules.
-   However, strictly speaking, 'text-header-48' implies 48px ALWAYS.
-   Adjusting approach: Retain component-level media queries for layout reflows, but avoid overriding font-size unless necessary or if the token system allows responsive behavior.
-   User asked for specific token application. I will leave resizing logic minimal or as overrides to the utility if essential for mobile (like hero title not overflowing).
-*/
-
-@media (max-width: 1024px) {
-    .logo-line {
-        width: 100px;
-    }
-
-    /* We might need to manually scale down very large headers on tablet if 128px/96px is too big.
-       Can override the component for safety.
-    */
-
-}
-
-@media (max-width: 768px) {
-    header {
-        /* flex-direction: column; */
-        /* align-items: flex-start; */
-        /* gap: 2rem; */
-    }
-
-    .logo-line {
-        display: none;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .hero-title {
-        flex-direction: column;
-        gap: 0;
-    }
-
-    .bar-6 {
-        height: 50px;
-    }
 }
 
 /* Utility Class Helpers */
@@ -548,231 +510,520 @@ nav a:hover {
     text-transform: uppercase;
 }
 
-/* --- Carousel Styles --- */
-.carousel-container {
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-}
+/* --- Works Section --- */
 
-.carousel-wrapper {
-    width: 100%;
-    height: 50vh;
-    overflow: hidden;
-}
-
-.carousel-track {
-    display: flex;
-    height: 100%;
-    transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide {
-    min-width: 100%;
+.section-header {
+    margin-bottom: 2rem;
     flex-shrink: 0;
-    height: 100%;
 }
 
-.slide-content {
+/* Featured Project Display */
+.featured-work {
     position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-
-.slide-image {
-    position: absolute;
-    inset: 0;
-    background-size: cover;
-    background-position: center;
-    transition: background-color 0.3s ease;
-}
-
-.slide-overlay {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 358px;
-    margin: auto 10vh;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.overlay-subtitle{
-    color: var(--gray-50);
-
-}
-
-.slide-btn {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform: translate(-50%, -50%);
-    padding: 1rem 2rem;
-    color: white;
-    background-color: transparent;
-    opacity: 0;
-    transition: opacity 0.3s ease, background-color 0.3s ease;
-    z-index: 10;
-    pointer-events: none;
-    transform: none;
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 2rem;
+    min-height: 500px;
 }
 
-.role-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 13px;
-}
-
-.role-tag {
-    color: var(--Grayscale-20, #ECEAEA);
-    font-family: Roboto;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 1px;
-    padding: 4px 12px;
-    background-color: var(--orange-60);
-    width: auto;
-}
-.slide-content:hover .slide-btn {
-    opacity: 1;
-    background-color: var(--orange-60);
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+/* Navigation Arrows */
+.nav-arrow {
+    position: absolute;
     z-index: 20;
-}
-
-.project-label {
-    color: var(--gray-40);
-}
-
-.project-name {
-    color: white;
-    margin: 0;
-}
-
-.project-subtitle {
-    color: var(--gray-40);
-    margin: 0;
-}
-
-.project-description {
-    color: var(--gray-50);
-    line-height: 1.6;
-}
-
-.view-project-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    color: white;
-    margin-top: 16px;
-    align-self: flex-start;
-}
-
-.carousel-btn {
-    position: absolute;
-    padding: 0 28px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: transparent;
-    border: none;
     cursor: pointer;
+    padding: 1rem;
+    transition: transform 0.3s ease, opacity 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity 0.3s ease;
-    z-index: 30;
 }
 
-.carousel-btn:hover {
-    opacity: 0.6;
+.nav-arrow:hover {
+    transform: scale(1.1);
 }
 
-.carousel-btn img {
-    width: 19px;
-    height: 31px;
-    display: block;
+.nav-arrow img {
+    width: 48px;
+    height: 48px;
+    filter: brightness(0);
 }
 
-.carousel-btn-prev {
+.nav-arrow-left {
     left: 0;
 }
 
-.carousel-btn-next {
+.nav-arrow-right {
     right: 0;
 }
 
-.carousel-dots {
+/* Project Background Image */
+.project-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.project-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Project Info Overlay */
+.project-overlay {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: center;
-    gap: 0.75rem;
-    padding: 1rem 0 2rem;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 3rem;
 }
 
-.carousel-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: var(--gray-60);
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.carousel-dot.active {
-    background-color: var(--orange-60);
-}
-
-.carousel-dot:hover {
-    background-color: var(--gray-40);
-}
-
-.carousel-titles {
+.project-info-left {
     display: flex;
     flex-direction: column;
-    align-items: start;
-    gap: 8px;
-    padding: 28px;
+    gap: 0.5rem;
 }
 
-.carousel-title-btn {
-    background: transparent;
-    border: none;
-    color: var(--gray-50);
+.project-name {
+    line-height: 1;
+}
+
+.project-tagline {
+    color: var(--gray-80);
+}
+
+.project-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-end;
+}
+
+.detail-block {
+    text-align: right;
+}
+
+.detail-label {
     font-family: var(--font-header);
-    font-size: 48px;
     font-weight: 600;
-    line-height: 1.1;
-    letter-spacing: 0.02em;
-    cursor: pointer;
-    transition: color 0.3s ease;
+    font-size: 24px;
+    color: var(--gray-80);
+    margin-bottom: 0.25rem;
+}
+
+.detail-value {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--gray-60);
+}
+
+/* Tags */
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: flex-end;
+}
+
+.tag {
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 14px;
     text-transform: uppercase;
 }
 
-.carousel-title-btn.active {
+.tag.primary {
+    background-color: var(--orange-60);
+    color: white;
+}
+
+.tag.secondary {
+    background-color: rgba(255, 255, 255, 0.9);
     color: var(--gray-80);
 }
 
-.carousel-title-btn:hover {
-    color: var(--gray-80);
+/* Project List Footer */
+.project-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-shrink: 0;
 }
 
-.selected-work {
-    color: var(--orange-50);
+.project-item {
+    font-family: var(--font-header);
+    font-weight: 600;
+    font-size: 48px;
+    color: var(--gray-40);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.3s;
+    line-height: 1;
+}
+
+.project-item:hover,
+.project-item.active {
+    color: var(--gray-60);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - UPDATED
+   ======================================== */
+
+/* Tablet (1024px and below) */
+@media (max-width: 1024px) {
+    /* Hero Section Wrappers */
+    .hero-header {
+        padding: 28px;
+    }
+
+    .hero-content-wrapper {
+        padding: 28px;
+    }
+
+    .status-hstack {
+        padding: 0 28px;
+    }
+
+    /* Works Container */
+    .works-container {
+        padding: 28px;
+    }
+
+    /* Header Content */
+    .logo .text-header-48 {
+        font-size: 32px;
+    }
+
+    nav ul {
+        gap: 1.5rem;
+    }
+
+    nav a.text-header-48 {
+        font-size: 24px;
+    }
+
+    /* Hero Section */
+    .hero-title {
+        gap: 0.5rem;
+    }
+
+    .hero-title .text-header-48 {
+        font-size: 36px;
+    }
+
+    .hero-description .text-body-24-regular {
+        font-size: 20px;
+    }
+
+    /* Art Bars */
+    .art-bars {
+        gap: 16px;
+    }
+
+    .bar-6 {
+        height: 60px;
+    }
+
+    /* Section Headers */
+    .text-header-64 {
+        font-size: 48px;
+    }
+
+    /* Featured Work */
+    .project-overlay {
+        padding: 2rem;
+    }
+
+    .text-header-128 {
+        font-size: 96px;
+    }
+
+    .project-tagline {
+        font-size: 18px;
+    }
+
+    .detail-label {
+        font-size: 20px;
+    }
+
+    .detail-value {
+        font-size: 16px;
+    }
+
+    /* Project List */
+    .project-item {
+        font-size: 36px;
+    }
+}
+
+/* Mobile (768px and below) */
+@media (max-width: 768px) {
+    /* Hero Section Wrappers */
+    .hero-header {
+        padding: 28px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .hero-content-wrapper {
+        padding: 28px;
+    }
+
+    .status-hstack {
+        padding: 0 28px;
+    }
+
+    /* Works Container */
+    .works-container {
+        padding: 28px;
+    }
+
+    /* Header Content */
+    .logo .text-header-48 {
+        font-size: 24px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    nav a.text-header-48 {
+        font-size: 18px;
+    }
+
+    /* Status */
+    .status-hstack .text-body-16-regular {
+        font-size: 14px;
+    }
+
+    /* Art Bars */
+    .art-bars {
+        gap: 12px;
+    }
+
+    .bar-1 { height: 2px; }
+    .bar-2 { height: 4px; }
+    .bar-3 { height: 8px; }
+    .bar-4 { height: 12px; }
+    .bar-5 { height: 20px; }
+    .bar-6 { height: 40px; }
+
+    /* Hero Section */
+    .hero-title {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .hero-title .text-header-48 {
+        font-size: 24px;
+    }
+
+    .hero-description .text-body-24-regular {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    /* Section Headers */
+    .text-header-64 {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    /* Featured Work */
+    .featured-work {
+        min-height: 400px;
+    }
+
+    .project-overlay {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-end;
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+
+    .project-details {
+        align-items: flex-start;
+    }
+
+    .detail-block {
+        text-align: left;
+    }
+
+    .tags-container {
+        justify-content: flex-start;
+    }
+
+    .nav-arrow {
+        padding: 0.5rem;
+    }
+
+    .nav-arrow img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .text-header-128 {
+        font-size: 64px;
+    }
+
+    .project-tagline {
+        font-size: 16px;
+    }
+
+    .detail-label {
+        font-size: 18px;
+    }
+
+    .detail-value {
+        font-size: 14px;
+    }
+
+    .tag {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    /* Project List */
+    .project-list {
+        gap: 0.75rem;
+    }
+
+    .project-item {
+        font-size: 20px;
+    }
+}
+
+/* Small Mobile (480px and below) */
+@media (max-width: 480px) {
+    /* Hero Section Wrappers */
+    .hero-header {
+        padding: 28px;
+    }
+
+    .hero-content-wrapper {
+        padding: 28px;
+    }
+
+    .status-hstack {
+        padding: 0 28px;
+    }
+
+    /* Works Container */
+    .works-container {
+        padding: 28px;
+    }
+
+    /* Header Content */
+    .logo .text-header-48 {
+        font-size: 20px;
+    }
+
+    nav a.text-header-48 {
+        font-size: 16px;
+    }
+
+    /* Hero */
+    .hero-title .text-header-48 {
+        font-size: 20px;
+    }
+
+    /* Section Headers */
+    .text-header-64 {
+        font-size: 28px;
+    }
+
+    /* Featured Work */
+    .featured-work {
+        min-height: 350px;
+    }
+
+    .project-overlay {
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    .text-header-128 {
+        font-size: 48px;
+    }
+
+    .project-tagline {
+        font-size: 14px;
+    }
+
+    .detail-label {
+        font-size: 16px;
+    }
+
+    .detail-value {
+        font-size: 13px;
+    }
+
+    .tag {
+        padding: 4px 10px;
+        font-size: 11px;
+    }
+
+    /* Project List */
+    .project-item {
+        font-size: 18px;
+    }
+
+    /* Art Bars */
+    .bar-5 { height: 16px; }
+    .bar-6 { height: 32px; }
+}
+
+/* Large Desktop (1440px and above) */
+@media (min-width: 1440px) {
+    /* Hero Section Wrappers */
+    .hero-header {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 28px;
+    }
+
+    .hero-content-wrapper {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 28px;
+    }
+
+    .status-hstack {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 28px;
+    }
+
+    /* Works Container */
+    .works-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 28px;
+    }
+
+    /* Featured Work */
+    .featured-work {
+        max-height: 600px;
+    }
+
+    .project-background img {
+        object-fit: contain;
+    }
 }
