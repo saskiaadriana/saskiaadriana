@@ -11,45 +11,45 @@
 
 <body>
 
+  <!-- Fixed Header -->
+  <header class="fixed-header">
+    <div class="header-container">
+      <div class="logo">
+        <span class="uppercase text-header-48">Saskia Adriana</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#work" class="uppercase text-header-48">Work</a></li>
+          <li><a href="#playground" class="uppercase text-header-48">Playground</a></li>
+          <li><a href="#about" class="uppercase text-header-48">About</a></li>
+          <li><a href="#contact" class="uppercase text-header-48">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
   <!-- Scroll Snap Container -->
   <div class="scroll-container">
 
-    <!-- SECTION 1: Home / Hero Section -->
+    <!-- SECTION 1: Hero -->
     <section class="snap-section hero-section">
-      <!-- HStack: Header with 28px padding -->
-      <header class="hero-header">
-        <div class="logo">
-          <span class="uppercase text-header-48">Saskia Adriana</span>
-        </div>
-        <nav>
-          <ul>
-            <li><a href="#work" class="uppercase text-header-48">Work</a></li>
-            <li><a href="#playground" class="uppercase text-header-48">Playground</a></li>
-            <li><a href="#about" class="uppercase text-header-48">About</a></li>
-            <li><a href="#contact" class="uppercase text-header-48">Contact</a></li>
-          </ul>
-        </nav>
-      </header>
-
-      <!-- VStack: Status + Decorative Bars (full width) -->
-      <div class="art-bars-wrapper">
-        <div class="status-hstack">
+      <!-- Decorative Bars -->
+      <div class="art-bars">
+        <div class="status container">
           <p class="text-body-16-regular">2025 • <span>Available for work</span></p>
         </div>
-        <div class="art-bars">
-          <span class="bar bar-1"></span>
-          <span class="bar bar-1"></span>
-          <span class="bar bar-2"></span>
-          <span class="bar bar-3"></span>
-          <span class="bar bar-4"></span>
-          <span class="bar bar-5"></span>
-          <span class="bar bar-6"></span>
-        </div>
+        <span class="bar bar-1"></span>
+        <span class="bar bar-1"></span>
+        <span class="bar bar-2"></span>
+        <span class="bar bar-3"></span>
+        <span class="bar bar-4"></span>
+        <span class="bar bar-5"></span>
+        <span class="bar bar-6"></span>
       </div>
 
-      <!-- VStack: Hero Content with 28px padding -->
-      <div class="hero-content-wrapper">
-        <div class="hero-content">
+      <div class="container">
+        <!-- Hero Content -->
+        <section class="hero-content">
           <h1 class="hero-title text-header-48">
             <span class="uppercase"> [UI DESIGN] </span>
             <span class="uppercase"> [UX DESIGN] </span>
@@ -57,73 +57,198 @@
           <p class="hero-description text-body-24-regular">
             I design thoughtful, human-centered products by turning complex problems into clear, meaningful experiences.
           </p>
-        </div>
+        </section>
       </div>
     </section>
 
-    <!-- SECTION 2: Selected Works -->
-    <section class="snap-section works-section" id="work">
-      <div class="works-container">
-        <div class="section-header">
-          <h2 class="text-header-64 uppercase">[SELECTED WORKS]</h2>
-        </div>
-
-        <!-- Featured Project Display -->
-        <div class="featured-work">
-          <!-- Left Navigation -->
-          <div class="nav-arrow nav-arrow-left">
-            <img src="images/chevron-left.svg" alt="Previous Project">
-          </div>
-
-          <!-- Project Background Image -->
-          <div class="project-background">
-            <img src="images/WAIS-Thumbnail.png" alt="WAIS Project">
-          </div>
-
-          <!-- Project Info Overlay -->
-          <div class="project-overlay">
-            <div class="project-info-left">
-              <div class="project-name">
-                <span class="uppercase text-header-128">WAIS</span>
-              </div>
-              <div class="project-tagline uppercase text-body-24-semibold">THINK IN COLORS</div>
-            </div>
-
-            <div class="project-details">
-              <div class="detail-block">
-                <div class="detail-label uppercase">Role</div>
-                <div class="detail-value">UX Designer & Illustrator</div>
-              </div>
-              <div class="detail-block">
-                <div class="detail-label uppercase">Timeline</div>
-                <div class="detail-value">Oct - Dec 2025</div>
-              </div>
-              <div class="tags-container">
-                <span class="tag primary">Product Design</span>
-                <span class="tag secondary">Research</span>
-                <span class="tag secondary">iOS</span>
-                <span class="tag secondary">UI/UX</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right Navigation -->
-          <div class="nav-arrow nav-arrow-right">
-            <img src="images/chevron-right.svg" alt="Next Project">
-          </div>
-        </div>
-
-        <!-- Project List Footer -->
-        <div class="project-list">
-          <div class="project-item active">WAIS - THINK IN COLORS</div>
-          <div class="project-item">COMPAST - A COMPOST ASSISTANT</div>
-          <div class="project-item">SWARAGAM - PRESERVING TRADITION THROUGH DISCOVERY</div>
-          <div class="project-item">PETJAM - TURNING CALORIES INTO CONNECTION</div>
-        </div>
+    <!-- SECTION 2: Works / Second Screen -->
+    <section class="snap-section works-section">
+      <div class="container">
+        <h2 class="text-header-64 uppercase selected-work">[SELECTED WORKS]</h2>
       </div>
+
+      <!-- Carousel -->
+      <div class="carousel-container">
+        <button class="carousel-btn carousel-btn-prev" id="prevBtn" aria-label="Previous slide">
+          <img src="images/chevron-left.svg" alt="Previous">
+        </button>
+
+        <div class="carousel-wrapper">
+          <div class="carousel-track" id="carouselTrack">
+            <!-- Slide 1 -->
+            <div class="carousel-slide">
+              <div class="slide-content">
+                  <span class="slide-btn text-header-64">VIEW PROJECT</span>
+                <div class="slide-image" style="background-image: url('./images/WAIS-Thumbnail.png');"></div>
+                <div class="slide-overlay">
+                  <p class="project-description text-body-16-regular">
+                    WAIS is a guided ideation tool designed to help teams think with clarity and psychological safety. By combining structured thinking modes with anonymity and authentic summaries, WAIS reimagines how groups brainstorm — with structure, empathy, and creative freedom.
+                  </p>
+                  <div class="slide-overlay-section">
+                    <h3 class="role text-header-36 uppercase">ROLE</h3>
+                    <p class="overlay-subtitle text-body-16-bold">UX Designer & Illustrator</p>
+                  </div>
+                  <div class="slide-overlay-section">
+                    <h3 class="role text-header-36 uppercase">TIMELINE</h3>
+                    <p class="overlay-subtitle text-body-16-bold">Oct - Dec 2025</p>
+                  </div>
+                  <div class="slide-overlay-section role-tags">
+                    <p class="role-tag">Product Design</p>
+                    <p class="role-tag">Research</p>
+                    <p class="role-tag">iOS</p>
+                    <p class="role-tag">UI/UX</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-slide">
+              <div class="slide-content">
+                <span class="slide-btn text-header-64">VIEW PROJECT</span>
+                <div class="slide-image" style="background-image: url('https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?w=1200&q=80');"></div>
+                <div class="slide-overlay">
+                  <span class="project-label text-body-14-semibold uppercase">UX Design</span>
+                  <h3 class="role text-header-36 uppercase">ROLE</h3>
+                  <p class="project-subtitle text-subheader-16">UX Designer & Illustrator</p>
+                  <h3 class="role text-header-36 uppercase">TIMELINE</h3>
+                  <p class="project-description text-body-16-regular">
+                    A mobile app that guides users through sustainable composting practices with personalized tips and progress tracking.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="carousel-slide">
+              <div class="slide-content">
+                <span class="slide-btn text-header-64">VIEW PROJECT</span>
+                <div class="slide-image" style="background-image: url('https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=1200&q=80');"></div>
+                <div class="slide-overlay">
+                  <span class="project-label text-body-14-semibold uppercase">UX Design</span>
+                  <h3 class="role text-header-36 uppercase">ROLE</h3>
+                  <p class="overlay-subtitle text-body-16-bold">UX Designer & Illustrator</p>
+                  <h3 class="role text-header-36 uppercase">TIMELINE</h3>
+                  <p class="project-description text-body-16-regular">
+                    A digital platform connecting users with Indonesian traditional music through interactive learning experiences.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 4 -->
+            <div class="carousel-slide">
+              <div class="slide-content">
+                <span class="slide-btn text-header-64">VIEW PROJECT</span>
+                <div class="slide-image" style="background-image: url('https://images.unsplash.com/photo-1561070791-2526d30994b5?w=1200&q=80');"></div>
+                <div class="slide-overlay">
+                  <span class="project-label text-body-14-semibold uppercase">UX Design</span>
+                  <h3 class="role text-header-36 uppercase">ROLE</h3>
+                  <p class="project-subtitle text-subheader-16">UX Designer & Illustrator</p>
+                  <h3 class="role text-header-36 uppercase">TIMELINE</h3>
+                  <p class="project-description text-body-16-regular">
+                    A social fitness app that pairs pet owners with their furry companions for motivation and accountability.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button class="carousel-btn carousel-btn-next" id="nextBtn" aria-label="Next slide">
+          <img src="images/chevron-right.svg" alt="Next">
+        </button>
+      </div>
+
+      <!-- Carousel Titles Navigation -->
+      <div class="carousel-titles" id="carouselTitles"></div>
     </section>
 
   </div>
+
+  <!-- Header Scroll Script -->
+  <script>
+    const header = document.querySelector('.fixed-header');
+    const scrollContainer = document.querySelector('.scroll-container');
+    const worksSection = document.querySelector('.works-section');
+
+    scrollContainer.addEventListener('scroll', () => {
+      if (scrollContainer.scrollTop > 50) {
+        header.classList.add('scrolled');
+        worksSection.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+        worksSection.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+  <!-- Carousel JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const track = document.getElementById('carouselTrack');
+      const slides = document.querySelectorAll('.carousel-slide');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const titlesContainer = document.getElementById('carouselTitles');
+
+      const projectTitles = [
+        'WAIS - THINK IN COLORS',
+        'COMPAST - A COMPOST ASSISTANT',
+        'SWARAGAM - PRESERVING TRADITION THROUGH DISCOVERY',
+        'PETJAM - TURNING CALORIES INTO CONNECTION'
+      ];
+
+      let currentIndex = 0;
+      const totalSlides = slides.length;
+
+      // Create title buttons
+      for (let i = 0; i < totalSlides; i++) {
+        const titleBtn = document.createElement('button');
+        titleBtn.classList.add('carousel-title-btn');
+        if (i === 0) titleBtn.classList.add('active');
+        titleBtn.textContent = projectTitles[i];
+        titleBtn.addEventListener('click', () => goToSlide(i));
+        titlesContainer.appendChild(titleBtn);
+      }
+
+      const titleBtns = document.querySelectorAll('.carousel-title-btn');
+
+      function updateCarousel() {
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        // Update title buttons
+        titleBtns.forEach((btn, index) => {
+          btn.classList.toggle('active', index === currentIndex);
+        });
+      }
+
+      function goToSlide(index) {
+        currentIndex = index;
+        updateCarousel();
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+      }
+
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+      }
+
+      // Event listeners
+      nextBtn.addEventListener('click', nextSlide);
+      prevBtn.addEventListener('click', prevSlide);
+
+      // Keyboard navigation
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') {
+          prevSlide();
+        } else if (e.key === 'ArrowRight') {
+          nextSlide();
+        }
+      });
+    });
+  </script>
 
 </body>
 
