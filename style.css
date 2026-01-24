@@ -635,6 +635,7 @@ nav a:hover {
     height: 100%;
     top: 0;
     left: 0;
+    z-index: 20;
 }
 
 .project-label {
@@ -678,7 +679,7 @@ nav a:hover {
     align-items: center;
     justify-content: center;
     transition: opacity 0.3s ease;
-    z-index: 10;
+    z-index: 30;
 }
 
 .carousel-btn:hover {
