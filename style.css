@@ -351,6 +351,10 @@ body {
     background-color: white;
 }
 
+.scroll-container.no-snap {
+    scroll-snap-type: none;
+}
+
 .scroll-container::-webkit-scrollbar {
     width: 8px;
 }
@@ -907,6 +911,7 @@ nav a.active {
   display: flex;
   flex-direction: column;
   gap: 32px;
+  margin-bottom:28px;
 
 }
 .about-title {
@@ -916,12 +921,25 @@ nav a.active {
   /* line-height:88px; */
   font-size:90px;
 }
+.about-subsection{
+  line-height:100%;
+  font-size:36px;
+  color: var(--gray-50);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 
+}
 .about-descriptions{
   line-height:32px;
   font-size:24px;
   color:black;
   display: flex;
   flex-direction: column;
-  gap: 32px;
 }
+.about-subsection-container{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+

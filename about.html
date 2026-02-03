@@ -28,7 +28,7 @@
   </header>
 
   <!-- Scroll Snap Container -->
-  <div class="scroll-container">
+  <div class="scroll-container no-snap">
 
     <!-- About Section -->
     <section class="snap-section about-section">
@@ -59,6 +59,27 @@
           <p class="about-descriptions about-animate about-animate-delay-1">
             I believe great design lives at the intersection of empathy and functionality. My approach combines user research, visual storytelling, and iterative prototyping to transform complex problems into clear, meaningful experiences.
           </p>
+          <div class="about-subsection-container">
+            <p class="about-subsection text-subheader-36-bold about-animate about-animate-delay-1">
+              Acknowledgement
+            </p>
+            <p class="about-descriptions about-animate about-animate-delay-1">
+              Special thanks to Arya for helping me to bring this current website design to life.
+            </p>
+            <p class="about-subsection text-subheader-36-bold about-animate about-animate-delay-1">
+              Location
+            </p>
+            <p class="about-descriptions about-animate about-animate-delay-1">
+              Jakarta - Indonesia
+              Turkey - Istanbul
+            </p>
+            <p class="about-subsection text-subheader-36-bold about-animate about-animate-delay-1">
+              Contact Me
+            </p>
+            <p class="about-descriptions about-animate about-animate-delay-1">
+              sadriana.id@gmail.com
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -67,7 +88,7 @@
 
   <!-- Header Scroll Script -->
   <script>
-    const header = document.querySelector('.fixed-header');
+    const header = document.querySelector('.fixed-header-white');
     const scrollContainer = document.querySelector('.scroll-container');
 
     scrollContainer.addEventListener('scroll', () => {
