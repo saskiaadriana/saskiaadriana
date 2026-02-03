@@ -914,6 +914,21 @@ nav a.active {
   margin-bottom:28px;
 
 }
+
+.about-content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.about-photo {
+  position: fixed;
+  bottom: 28px;
+  left: calc(53% + 10%);
+  width: 27%;
+  max-height: 80vh;
+  object-fit: cover;
+}
 .about-title {
   color: black;
   display: flex;
