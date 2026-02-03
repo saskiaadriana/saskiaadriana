@@ -315,6 +315,7 @@ body {
     transition: padding 0.3s ease, background-color 0.3s ease;
 }
 
+
 .fixed-header .text-header-48 {
     transition: font-size 0.3s ease, color 0.3s ease;
 }
@@ -330,6 +331,10 @@ body {
 .fixed-header.scrolled {
     padding: 14px 28px;
     background-color: white;
+}
+
+.white {
+    color: var(--gray-60);
 }
 
 .fixed-header.scrolled .text-header-48 {
@@ -371,7 +376,7 @@ body {
 }
 
 .hero-section {
-    padding-top: 160px;
+    padding-top: 120px;
     background-color: var(--gray-80);
 }
 
@@ -411,6 +416,16 @@ nav a {
     color: var(--color-text-main);
     position: relative;
     transition: color 0.3s ease;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--color-text-main);
+    position: relative;
+    transition: color 0.3s ease;
+}
+.whitethemeletter {
+    color: var(--gray-80);
 }
 
 nav a:hover {
@@ -534,6 +549,48 @@ nav a:hover {
     }
 }
 
+/* Carousel Responsive */
+@media (max-width: 1024px) {
+    .carousel-wrapper {
+        height: 50vh;
+    }
+
+    .slide-overlay {
+        width: 300px;
+        padding: 40px 24px;
+    }
+
+    .carousel-title-btn {
+        font-size: 36px;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-wrapper {
+        height: 40vh;
+    }
+
+    .slide-overlay {
+        width: 100%;
+        top: auto;
+        bottom: 0;
+        transform: none;
+        padding: 24px;
+    }
+
+    .carousel-title-btn {
+        font-size: 28px;
+    }
+
+    .carousel-btn {
+        padding: 0 16px;
+    }
+
+    .slide-btn {
+        font-size: 32px !important;
+    }
+}
+
 /* Utility Class Helpers */
 .uppercase {
     text-transform: uppercase;
@@ -571,6 +628,8 @@ nav a:hover {
     position: relative;
     width: 100%;
     height: 100%;
+    display: block;
+    text-decoration: none;
 }
 
 
@@ -766,4 +825,103 @@ nav a:hover {
 
 .selected-work {
     color: var(--orange-50);
+}
+
+/* --- About Section --- */
+.about-section {
+    padding-top: 160px;
+    background-color: white;
+    justify-content: flex-start;
+}
+
+.about-content {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-bottom: 60px;
+}
+
+/* Active nav link state */
+nav a.active {
+    color: var(--orange-50);
+}
+
+/* --- About Page Animation --- */
+.about-section {
+    animation: aboutBgColor 1s ease-out forwards;
+}
+
+.about-animate {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: aboutFadeIn 0.8s ease-out forwards;
+}
+
+.about-animate-delay-1 {
+    animation-delay: 0.1s;
+}
+
+.about-animate-delay-2 {
+    animation-delay: 0.2s;
+}
+
+.about-animate-delay-3 {
+    animation-delay: 0.3s;
+}
+
+@keyframes aboutFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes aboutBgColor {
+    0% {
+        background-color: white;
+    }
+    100% {
+        background-color: white;
+    }
+}
+
+.fixed-header-white {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: white;
+    padding: 28px;
+    transition: padding 0.3s ease, background-color 0.3s ease;
+}
+
+.white-header {
+    background-color: white;
+    color: var(--gray-80);
+    font-size: 32px;
+}
+.about-container {
+  width:53%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+}
+.about-title {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  /* line-height:88px; */
+  font-size:90px;
+}
+
+.about-descriptions{
+  line-height:32px;
+  font-size:24px;
+  color:black;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }

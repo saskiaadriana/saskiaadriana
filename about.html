@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Saskia Adriana</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Fixed Header -->
+
+  <header class="fixed-header-white">
+    <div class="header-container">
+      <div class="logo">
+        <span class="white uppercase text-header-48">Saskia Adriana</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html#work" class="white uppercase text-header-48">Work</a></li>
+          <li><a href="index.html#playground" class="white uppercase text-header-48">Playground</a></li>
+          <li><a href="about.html" class="white uppercase text-header-48 active">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Scroll Snap Container -->
+  <div class="scroll-container">
+
+    <!-- About Section -->
+    <section class="snap-section about-section">
+      <div class="container">
+        <div class="about-container">
+          <h2 class="about-title text-header-64 about-animate">
+            Product Designer (UI/UX)
+            crafting thoughtful,
+            human-centered digital
+            experiences
+          </h2>
+          <p class="about-descriptions about-animate about-animate-delay-1">
+            Before moving into UI/UX, I spent around five years working as an interior designer. That experience shaped how I approach design today. I learned to always start with the user by understanding their needs, behaviors, and context before making visual decisions. From defining layouts and flows to building mood boards, color palettes, and functional systems, every choice was planned, intentional, and detail-oriented. The same principles now guide my work in digital products.
+
+          </p>
+          <p class="about-descriptions about-animate about-animate-delay-1">
+            UI/UX felt like a natural evolution of my design journey. It brings together creativity and logic, empathy and aesthetics, while allowing me to work closely with technology. I enjoy breaking down complex problems, thinking systematically, and paying attention to details — from interaction patterns to small usability decisions that shape the overall experience.
+          </p>
+          <p class="about-descriptions about-animate about-animate-delay-1">
+            I’ve been passionate about art since I was a kid, especially forms that combine multiple disciplines. Over the years, I explored many creative paths: experimenting with small creative businesses, participating in filmmaking projects, playing in an indie rock band, and contributing to visual art exhibitions. Each experience shaped how I see creativity as something fluid, collaborative, and deeply human.
+          </p>
+          <p class="about-descriptions about-animate about-animate-delay-1">
+            I’m deeply interested in people and culture. I often catch myself wondering what people are thinking — on trains, in airports, or while watching how they react to an image or a video. Those small observations continuously broaden my perspective and feed into how I design experiences with empathy.
+            </p>
+          <p class="about-descriptions about-animate about-animate-delay-1">
+            Outside of work, I’m a lifelong gamer, especially into strategy, RPG, and roguelike games, where systems and decision-making play a central role. I’m also a devoted cat person, currently raising two cats I’ve cared for since they were born.
+          </p>
+          <p class="about-descriptions about-animate about-animate-delay-1">
+            I believe great design lives at the intersection of empathy and functionality. My approach combines user research, visual storytelling, and iterative prototyping to transform complex problems into clear, meaningful experiences.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Header Scroll Script -->
+  <script>
+    const header = document.querySelector('.fixed-header');
+    const scrollContainer = document.querySelector('.scroll-container');
+
+    scrollContainer.addEventListener('scroll', () => {
+      if (scrollContainer.scrollTop > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+</body>
+
+</html>
