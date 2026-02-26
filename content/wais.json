@@ -1,0 +1,145 @@
+{
+  "meta": {
+    "title": "WAIS - Saskia Adriana"
+  },
+  "hero": {
+    "label": "Case Study",
+    "title": "WAIS",
+    "subtitle": "Think in Colors",
+    "description": "A guided ideation tool designed to help teams think with clarity and psychological safety."
+  },
+  "overview": {
+    "title": "Project Overview",
+    "items": [
+      {
+        "label": "Role",
+        "value": "UX Designer & Illustrator"
+      },
+      {
+        "label": "Timeline",
+        "value": "Oct - Dec 2025"
+      },
+      {
+        "label": "Tools",
+        "value": "Figma, Illustrator"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "type": "content",
+      "title": "The Problem",
+      "content": "Team brainstorming sessions often suffer from groupthink, dominant voices overshadowing quiet contributors, and a lack of structured thinking. Traditional brainstorming tools don't provide the psychological safety or framework needed for inclusive ideation."
+    },
+    {
+      "type": "image-full",
+      "src": "images/wais/wais-challenge-statement.png",
+      "caption": "Defining the challenge space"
+    },
+    {
+      "type": "content",
+      "title": "Research & Discovery",
+      "content": "Through user interviews and team observation sessions, I discovered that the biggest barriers to effective brainstorming were:",
+      "list": [
+        "Fear of judgment when sharing unconventional ideas",
+        "Cognitive overload from unstructured discussions",
+        "Lack of visual frameworks to guide thinking"
+      ]
+    },
+    {
+      "type": "image-grid",
+      "images": [
+        {
+          "src": "images/wais/wais-pain-points.png",
+          "caption": "Key pain points identified"
+        },
+        {
+          "src": "images/wais/wais-guiding-question.png",
+          "caption": "Research guiding questions"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "title": "The Solution",
+      "content": "WAIS introduces \"thinking modes\" — color-coded frameworks that guide teams through different cognitive approaches. Each mode provides structure while maintaining anonymity, ensuring every voice is heard."
+    },
+    {
+      "type": "image-grid-with-title",
+      "title": "Low-Fidelity Explorations",
+      "images": [
+        {
+          "src": "images/wais/wais-lofi-v1.png",
+          "caption": "Initial wireframes"
+        },
+        {
+          "src": "images/wais/wais-lofi-v2.png",
+          "caption": "Refined layout"
+        }
+      ]
+    },
+    {
+      "type": "image-grid-with-title",
+      "title": "High-Fidelity Designs",
+      "images": [
+        {
+          "src": "images/wais/wais-hifi-v1.png",
+          "caption": "Visual design iteration 1"
+        },
+        {
+          "src": "images/wais/wais-hifi-v2.png",
+          "caption": "Visual design iteration 2"
+        }
+      ]
+    },
+    {
+      "type": "image-full",
+      "src": "images/wais/wais-end-preview.png",
+      "caption": "Final design preview"
+    },
+    {
+      "type": "animation-grid",
+      "title": "Animations",
+      "images": [
+        {
+          "src": "images/wais/wais-splash-animation.gif",
+          "caption": "Splash screen"
+        },
+        {
+          "src": "images/wais/wais-clock-animation.gif",
+          "caption": "Timer animation"
+        },
+        {
+          "src": "images/wais/wais-red-pulse-animation.gif",
+          "caption": "Mode transition"
+        },
+        {
+          "src": "images/wais/wais-green-bloom-animation.gif",
+          "caption": "Bloom effect"
+        },
+        {
+          "src": "images/wais/wais-white-clarity-animation.gif",
+          "caption": "Clarity mode"
+        },
+        {
+          "src": "images/wais/wais-yellow-ray-animation.gif",
+          "caption": "Ray effect"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "title": "Reflection",
+      "content": "Working on WAIS taught me the importance of designing for psychological safety in collaborative tools. The color-coded thinking modes became a powerful visual language that reduced cognitive load and made abstract thinking processes tangible."
+    }
+  ],
+  "footer": {
+    "backLink": "index.html#work",
+    "backText": "← Back to Work",
+    "contact": {
+      "text": "Interested in collaborating?",
+      "linkText": "Get in touch",
+      "email": "sadriana.id@gmail.com"
+    }
+  }
+}

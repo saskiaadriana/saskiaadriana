@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saskia Adriana - WAIS Case Study</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black: #ffffff;
+        }
+        body {
+            color: #1a1a1a;
+            background-color: #ffffff !important;
+        }
+        .body-white {
+            background-color: #ffffff !important;
+        }
+        .scroll-container {
+            padding-top: 120px;
+        }
+    </style>
+</head>
+<body class="body-white">
+
+    <!-- Fixed Header -->
+    <header class="fixed-header-white">
+        <div class="header-container">
+            <div class="logo">
+                <span class="white uppercase text-header-48">Saskia Adriana</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html#work" class="white uppercase text-header-48">Work</a></li>
+                    <li><a href="index.html#playground" class="white uppercase text-header-48">Playground</a></li>
+                    <li><a href="about.html" class="white uppercase text-header-48">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Scroll Snap Container -->
+    <div class="scroll-container no-snap">
+
+    <main>
+        <section class="section-padding">
+            <div class="container">
+                <h1 class="project-title">WAIS - THINK IN COLORS</h1>
+            </div>
+        </section>
+
+        <section class="section-padding border-top">
+            <div class="container grid-layout">
+                <div class="meta-data">
+                    <div class="meta-item">
+                        <span class="label">Role</span>
+                        <p>UX Designer & Illustrator</p>
+                    </div>
+                    <div class="meta-item">
+                        <span class="label">Timeline</span>
+                        <p>2025</p>
+                    </div>
+                    <div class="meta-item">
+                        <span class="label">Tools</span>
+                        <p>Figma, Lottie, Miro</p>
+                    </div>
+                </div>
+
+                <div class="intro-text">
+                    <p class="large-text">
+                        WAIS is a guided ideation tool designed to help teams think with clarity and psychological safety. By combining structured thinking modes with anonymity and authentic summaries, WAIS reimagines how groups brainstorm — with structure, empathy, and creative freedom.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="full-width-image-container">
+            <div class="container">
+                <div class="image-placeholder main-hero">
+                    <p>[Insert 3D Phone Mockup Here]</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container grid-layout">
+                <div class="section-label">
+                    <h3>MY ROLE</h3>
+                </div>
+
+                <div class="content-text">
+                    <p>Throughout the project, I focused mainly on experience design while collaborating closely with the rest of the team.</p>
+                    <p>My contributions included:</p>
+                    <ul class="styled-list">
+                        <li><strong>Conducting</strong> user interviews and synthesizing insights</li>
+                        <li>Defining problem framing and concept direction</li>
+                        <li><strong>Facilitating</strong> feature ideation</li>
+                        <li>Creating user flows, wireframes, and prototypes</li>
+                        <li>Designing onboarding, dashboard, and color rounds</li>
+                        <li>Developing visual identity, illustrations, and tone</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container grid-layout">
+                <div class="section-label">
+                    <h3>HOW IT BEGINS</h3>
+                </div>
+                <div class="content-text">
+                    <p>During my time at the Apple Developer Academy, ideation was part of our everyday work. Across six different project challenges and frequently changing teammates, discussions became the backbone of how we aligned, generated ideas, and made decisions together.</p>
+                    <p>What resonated more deeply was brainstorming itself. It was something we struggled with daily and knew would remain relevant in our future careers in tech and design.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding grey-bg">
+            <div class="container">
+                <p class="caption">Early guiding questions used to explore real pain points in team ideation</p>
+                <div class="card-grid">
+                    <div class="card"><h4>Fundamentals</h4></div>
+                    <div class="card"><h4>Defining Direction</h4></div>
+                    <div class="card"><h4>Problem-related</h4></div>
+                    <div class="card"><h4>Tools-related</h4></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Saskia Adriana. Designed with Code.</p>
+        </div>
+    </footer>
+
+    </div>
+
+    <!-- Header Scroll Script -->
+    <script>
+        const header = document.querySelector('.fixed-header-white');
+        const scrollContainer = document.querySelector('.scroll-container');
+
+        scrollContainer.addEventListener('scroll', () => {
+            if (scrollContainer.scrollTop > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+</body>
+</html>
