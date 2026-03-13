@@ -147,6 +147,14 @@ body {
     letter-spacing: 0.02em;
 }
 
+.text-header-24 {
+    font-family: var(--font-header);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+}
+
 /* Subheaders (Roboto) */
 .text-subheader-40-bold {
     font-family: var(--font-body);
@@ -199,6 +207,13 @@ body {
 }
 
 /* Body (Roboto) */
+.text-body-32-regular {
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 42px;
+}
+
 .text-body-24-bold {
     font-family: var(--font-body);
     font-weight: 700;
@@ -318,6 +333,7 @@ body {
 
 .fixed-header .text-header-48 {
     transition: font-size 0.3s ease, color 0.3s ease;
+    color: var(--gray-20);
 }
 
 .header-container {
@@ -338,8 +354,12 @@ body {
 }
 
 .fixed-header.scrolled .text-header-48 {
-    color: var(--gray-60);
+    color: var(--gray-80);
     font-size: 32px;
+}
+
+.fixed-header.scrolled .nav-active {
+    color: var(--orange-50);
 }
 
 /* Scroll Snap Container */
@@ -407,7 +427,13 @@ body {
     align-items: center;
 }
 
-/* Navigation HStack */
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
 nav ul {
     list-style: none;
     display: flex;
@@ -417,7 +443,7 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: var(--color-text-main);
+    color: var(--gray-20);
     position: relative;
     transition: color 0.3s ease;
 }
@@ -434,6 +460,10 @@ nav a {
 
 nav a:hover {
     color: var(--color-primary);
+}
+
+.fixed-header.scrolled nav a {
+    color: var(--gray-80);
 }
 
 /* Status Section */
@@ -685,6 +715,11 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
+}
+
+.slide-content:hover .slide-btn {
+    pointer-events: auto;
 }
 
 .role-tags {
@@ -822,6 +857,8 @@ nav a:hover {
     cursor: pointer;
     transition: color 0.3s ease;
     text-transform: uppercase;
+    margin: 0;
+    padding: 0;
 }
 
 .carousel-title-btn.active {
@@ -834,6 +871,108 @@ nav a:hover {
 
 .selected-work {
     color: var(--orange-50);
+    margin: 0;
+    padding: 0;
+}
+
+/* About Page Styles */
+.about-page {
+    padding-top: 160px;
+    padding-bottom: 60px;
+    background-color: white;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 55fr 45fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.about-text {
+    color: var(--gray-80);
+}
+
+.about-tagline {
+    margin-top: 16px;
+    margin-bottom: 40px;
+    color: var(--gray-80);
+}
+
+.about-description {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 60px;
+}
+
+.about-description p {
+    color: var(--gray-80);
+}
+
+.about-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.about-section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.section-title {
+    color: var(--gray-50);
+}
+
+.about-section p {
+    color: var(--gray-80);
+}
+
+.about-image {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
+}
+
+.about-image img {
+    width: 80%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* About page header styles */
+.fixed-header-transparent {
+    background-color: transparent;
+}
+
+.fixed-header-transparent .text-header-48 {
+    color: var(--gray-80);
+}
+
+.fixed-header-transparent .nav-active {
+    color: var(--orange-50);
+}
+
+.fixed-header-transparent.scrolled {
+    background-color: white;
+}
+
+.fixed-header-transparent.scrolled .text-header-48 {
+    color: var(--gray-80);
+}
+
+.fixed-header-transparent.scrolled .nav-active {
+    color: var(--orange-50);
+}
+
+/* Scrollable page styles (for pages like about.html) */
+body.page-scrollable {
+    overflow: auto;
+    height: auto;
 }
 
 /* --- About Section --- */

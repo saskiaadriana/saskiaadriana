@@ -3,154 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saskia Adriana - WAIS Case Study</title>
+    <title>WAIS - Think in Colors | Saskia Adriana</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --black: #ffffff;
-        }
-        body {
-            color: #1a1a1a;
-            background-color: #ffffff !important;
-        }
-        .body-white {
-            background-color: #ffffff !important;
-        }
-        .scroll-container {
-            padding-top: 120px;
-        }
-    </style>
+    <link rel="stylesheet" href="case-study.css">
 </head>
-<body class="body-white">
-
+<body class="page-scrollable">
     <!-- Fixed Header -->
-    <header class="fixed-header-white">
+    <header class="fixed-header fixed-header-transparent">
         <div class="header-container">
             <div class="logo">
-                <span class="white uppercase text-header-48">Saskia Adriana</span>
+                <a href="index.html" class="uppercase text-header-48">SASKIA ADRIANA</a>
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html#work" class="white uppercase text-header-48">Work</a></li>
-                    <li><a href="index.html#playground" class="white uppercase text-header-48">Playground</a></li>
-                    <li><a href="about.html" class="white uppercase text-header-48">About</a></li>
+                    <li><a href="index.html#selected-works" class="nav-active uppercase text-header-48">WORK</a></li>
+                    <li><a href="#" class="uppercase text-header-48">PLAYGROUND</a></li>
+                    <li><a href="about.html" class="uppercase text-header-48">ABOUT</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Scroll Snap Container -->
-    <div class="scroll-container no-snap">
+    <!-- Main Content -->
+    <main class="case-study-page">
+        <div class="container">
+            <!-- Project Title -->
+            <section class="project-title-section">
+                <h1 class="text-header-96" style="color: var(--gray-80);">WAIS - THINK IN COLORS</h1>
+                <div class="project-title-line"></div>
+            </section>
 
-    <main>
-        <section class="section-padding">
-            <div class="container">
-                <h1 class="project-title">WAIS - THINK IN COLORS</h1>
-            </div>
-        </section>
-
-        <section class="section-padding border-top">
-            <div class="container grid-layout">
-                <div class="meta-data">
-                    <div class="meta-item">
-                        <span class="label">Role</span>
-                        <p>UX Designer & Illustrator</p>
+            <!-- Intro Section - Two Column -->
+            <section class="intro-section">
+                <div class="intro-grid">
+                    <!-- Left Column -->
+                    <div class="intro-left">
+                        <div class="intro-item">
+                            <p class="text-subheader-24-extrabold" style="color: var(--gray-40);">ROLE</p>
+                            <p class="text-body-16-regular" style="color: var(--gray-80);">UX Designer & Illustrator</p>
+                        </div>
+                        <div class="intro-item">
+                            <p class="text-subheader-24-extrabold" style="color: var(--gray-40);">TIMELINE</p>
+                            <p class="text-body-16-regular" style="color: var(--gray-80);">2025</p>
+                        </div>
+                        <div class="intro-item">
+                            <p class="text-subheader-24-extrabold" style="color: var(--gray-40);">TOOLS</p>
+                            <p class="text-body-16-regular" style="color: var(--gray-80);">Figma, Lottie, Miro</p>
+                        </div>
                     </div>
-                    <div class="meta-item">
-                        <span class="label">Timeline</span>
-                        <p>2025</p>
+
+                    <!-- Right Column -->
+                    <div class="intro-right">
+                        <div class="project-description">
+                            <p class="text-body-32-regular" style="color: var(--gray-80);">
+                                WAIS is a guided ideation tool designed to help teams think with clarity and psychological safety. By combining structured thinking modes with anonymity and authentic summaries, WAIS reimagines how groups brainstorm — with structure, empathy, and creative freedom.
+                            </p>
+                        </div>
                     </div>
-                    <div class="meta-item">
-                        <span class="label">Tools</span>
-                        <p>Figma, Lottie, Miro</p>
+                </div>
+            </section>
+
+            <!-- Full Width Image 1 -->
+            <section class="full-width-image-section first">
+                <img src="images/wais/wais-end-preview.png" alt="WAIS End Preview" class="full-width-image">
+            </section>
+
+            <!-- Two Column Section (Blank Left) -->
+            <section class="content-section">
+                <div class="content-section-grid">
+                    <div class="content-section-left"></div>
+                    <div class="content-section-right">
+                        <p class="text-subheader-24-bold" style="color: var(--gray-80); margin-bottom: 10px;">MY ROLE</p>
+                        <p class="text-body-24-regular" style="color: var(--gray-80); line-height: 32px;">
+                            Throughout the project, I focused mainly on experience design while collaborating closely with the rest of the team.
+                        </p>
+                        <p class="text-body-24-regular" style="color: var(--gray-80); margin-top: 16px; line-height: 32px;">My contributions included:</p>
+                        <ul class="contributions-list">
+                            <li class="text-body-24-regular" style="color: var(--gray-80); line-height: 32px;">conducting user interviews and synthesizing insights</li>
+                            <li class="text-body-24-regular" style="color: var(--gray-80); line-height: 32px;">defining problem framing and concept direction</li>
+                            <li class="text-body-24-regular" style="color: var(--gray-80); line-height: 32px;">facilitating feature ideation</li>
+                            <li class="text-body-24-regular" style="color: var(--gray-80); line-height: 32px;">creating user flows, wireframes, and prototypes</li>
+                            <li class="text-body-24-regular" style="color: var(--gray-80); line-height: 32px;">designing onboarding, dashboard, and color rounds</li>
+                            <li class="text-body-24-regular" style="color: var(--gray-80); line-height: 32px;">developing visual identity, illustrations, and tone</li>
+                            <li class="text-body-24-regular" style="color: var(--gray-80); line-height: 32px;">writing UX copy and guidance</li>
+                            <li class="text-body-24-regular" style="color: var(--gray-80); line-height: 32px;">collaborating on design token implementation</li>
+                            <li class="text-body-24-regular" style="color: var(--gray-80); line-height: 32px;">assisting with UI implementation and Lottie animations</li>
+                        </ul>
                     </div>
                 </div>
+            </section>
 
-                <div class="intro-text">
-                    <p class="large-text">
-                        WAIS is a guided ideation tool designed to help teams think with clarity and psychological safety. By combining structured thinking modes with anonymity and authentic summaries, WAIS reimagines how groups brainstorm — with structure, empathy, and creative freedom.
-                    </p>
+            <!-- Content Section -->
+            <section class="content-section">
+                <div class="content-section-grid">
+                    <div class="content-section-left"></div>
+                    <div class="content-section-right">
+                        <p class="text-subheader-24-bold" style="color: var(--gray-80); margin-bottom: 10px;">HOW IT BEGINS</p>
+                        <p class="text-body-24-regular" style="color: var(--gray-80); line-height: 32px;">
+                            During my time at the Apple Developer Academy, ideation was part of our everyday work. Across six different project challenges and frequently changing teammates, discussions became the backbone of how we aligned, generated ideas, and made decisions together. While we initially explored topics like posture and doomscrolling, both revealed limitations early on and felt disconnected from the problems we faced most often.
+                        </p>
+                        <p class="text-body-24-regular" style="color: var(--gray-80); margin-top: 32px; line-height: 32px;">
+                            What resonated more deeply was brainstorming itself. It was something we struggled with daily and knew would remain relevant in our future careers in tech and design. Instead of forcing a direction, we framed early research questions around how teams generate ideas, facilitate discussions, and where ideation tends to break down.
+                        </p>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="full-width-image-container">
+            <!-- Story Section 1 -->
+            <section class="story-section">
+                <div class="story-grid">
+                    <div class="story-left">
+                        <p class="text-body-16-bold" style="color: var(--gray-50);">HOW IT BEGINS</p>
+                    </div>
+                    <div class="story-right">
+                        <p class="text-body-32-regular" style="color: var(--gray-80);">
+                            During my time at the Apple Developer Academy, ideation was part of our everyday work. Across six different project challenges and frequently changing teammates, discussions became the backbone of how we aligned, generated ideas, and made decisions together. While we initially explored topics like posture and doomscrolling, both revealed limitations early on and felt disconnected from the problems we faced most often.
+                        </p>
+                        <p class="text-body-32-regular" style="color: var(--gray-80); margin-top: 32px;">
+                            What resonated more deeply was brainstorming itself. It was something we struggled with daily and knew would remain relevant in our future careers in tech and design. Instead of forcing a direction, we framed early research questions around how teams generate ideas, facilitate discussions, and where ideation tends to break down.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Full Width Image 2 -->
+            <section class="full-width-image-section second">
+                <img src="images/wais/wais-guiding-question.png" alt="Early Guiding Questions" class="full-width-image">
+                <p class="image-caption text-body-16-regular" style="color: var(--gray-50); text-align: center; margin-top: 16px;">Early guiding questions used to explore real pain points in team ideation</p>
+            </section>
+
+            <!-- Story Section 2 -->
+            <section class="story-section">
+                <div class="story-grid">
+                    <div class="story-left">
+                        <p class="text-body-16-bold" style="color: var(--gray-50);">UNDERSTANDING THE FRICTION IN TEAM BRAINSTORMING</p>
+                    </div>
+                    <div class="story-right">
+                        <p class="text-body-32-regular" style="color: var(--gray-80);">
+                            Our guiding questions shaped interviews with people inside and outside the Academy, including architects, DevOps engineers, QA, R&D, and other creative roles. Despite different backgrounds, the same frustrations surfaced repeatedly. Brainstorming sessions were often described as unclear and exhausting—discussions drifted without shared goals, ideas and critiques mixed too early, and emotional dynamics influenced outcomes. Dominant voices tended to lead, while quieter members held back despite valuable input.
+                        </p>
+                        <p class="text-body-32-regular" style="color: var(--gray-80); margin-top: 32px;">
+                            Many interviewees said building on others' ideas felt positive but difficult in practice. Although some knew ideation principles like Osborn's rules, most struggled to apply them consistently during real discussions. This gap between understanding the rules and practicing them became a recurring problem.
+                        </p>
+                        <p class="text-body-32-regular" style="color: var(--gray-80); margin-top: 32px;">
+                            From these insights, we realized that teams didn't lack ideas, instead they lacked environments that supported shared thinking. Teams needed both focus and psychological safety to speak openly. When discussions were too open, people felt lost; when too rigid, they felt constrained. The core challenge was balancing clarity with openness in team ideation.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="case-study-footer">
             <div class="container">
-                <div class="image-placeholder main-hero">
-                    <p>[Insert 3D Phone Mockup Here]</p>
+                <div class="footer-grid">
+                    <!-- Jump to Top -->
+                    <div class="footer-top">
+                        <a href="#" class="jump-to-top">
+                            <img src="images/chevron-up.svg" alt="Jump to top" class="nav-icon">
+                            <span class="text-body-16-semibold" style="color: var(--gray-80);">JUMP TO TOP</span>
+                        </a>
+                    </div>
+
+                    <!-- Previous Project -->
+                    <div class="footer-prev">
+                        <img src="images/chevron-left.svg" alt="Previous" class="nav-icon">
+                        <div class="project-nav-info">
+                            <p class="text-body-16-bold" style="color: var(--gray-50);">PREVIOUS</p>
+                            <p class="text-body-24-regular" style="color: var(--gray-80);">PETJAM - TURNING CALORIES INTO CONNECTION</p>
+                        </div>
+                    </div>
+
+                    <!-- Next Project -->
+                    <div class="footer-next">
+                        <div class="project-nav-info" style="text-align: right;">
+                            <p class="text-body-16-bold" style="color: var(--gray-50);">NEXT</p>
+                            <p class="text-body-24-regular" style="color: var(--gray-80);">COMPAST - A COMPOST ASSISTANT</p>
+                        </div>
+                        <img src="images/chevron-right.svg" alt="Next" class="nav-icon">
+                    </div>
                 </div>
             </div>
-        </section>
 
-        <section class="section-padding">
-            <div class="container grid-layout">
-                <div class="section-label">
-                    <h3>MY ROLE</h3>
-                </div>
-
-                <div class="content-text">
-                    <p>Throughout the project, I focused mainly on experience design while collaborating closely with the rest of the team.</p>
-                    <p>My contributions included:</p>
-                    <ul class="styled-list">
-                        <li><strong>Conducting</strong> user interviews and synthesizing insights</li>
-                        <li>Defining problem framing and concept direction</li>
-                        <li><strong>Facilitating</strong> feature ideation</li>
-                        <li>Creating user flows, wireframes, and prototypes</li>
-                        <li>Designing onboarding, dashboard, and color rounds</li>
-                        <li>Developing visual identity, illustrations, and tone</li>
-                    </ul>
-                </div>
+            <!-- Copyright -->
+            <div class="copyright">
+                <p class="text-body-14-regular" style="color: var(--gray-50);">© 2025 ALL RIGHTS RESERVED</p>
             </div>
-        </section>
-
-        <section class="section-padding">
-            <div class="container grid-layout">
-                <div class="section-label">
-                    <h3>HOW IT BEGINS</h3>
-                </div>
-                <div class="content-text">
-                    <p>During my time at the Apple Developer Academy, ideation was part of our everyday work. Across six different project challenges and frequently changing teammates, discussions became the backbone of how we aligned, generated ideas, and made decisions together.</p>
-                    <p>What resonated more deeply was brainstorming itself. It was something we struggled with daily and knew would remain relevant in our future careers in tech and design.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-padding grey-bg">
-            <div class="container">
-                <p class="caption">Early guiding questions used to explore real pain points in team ideation</p>
-                <div class="card-grid">
-                    <div class="card"><h4>Fundamentals</h4></div>
-                    <div class="card"><h4>Defining Direction</h4></div>
-                    <div class="card"><h4>Problem-related</h4></div>
-                    <div class="card"><h4>Tools-related</h4></div>
-                </div>
-            </div>
-        </section>
-
+        </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Saskia Adriana. Designed with Code.</p>
-        </div>
-    </footer>
-
-    </div>
-
-    <!-- Header Scroll Script -->
     <script>
-        const header = document.querySelector('.fixed-header-white');
-        const scrollContainer = document.querySelector('.scroll-container');
+        // Scroll behavior for header
+        const header = document.querySelector('.fixed-header');
+        const scrollThreshold = 50;
 
-        scrollContainer.addEventListener('scroll', () => {
-            if (scrollContainer.scrollTop > 50) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > scrollThreshold) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
         });
-    </script>
 
+        // Jump to top functionality
+        document.querySelector('.jump-to-top').addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
