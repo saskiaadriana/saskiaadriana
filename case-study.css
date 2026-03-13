@@ -89,23 +89,23 @@
     padding: 0 28px;
 }
 
-/* Two Column Section with Blank Left */
-.two-column-blank-left {
-    padding: 60px 0;
+/* Content Section - Two Column Grid with Blank Left */
+.content-section {
+    padding: 40px 0;
 }
 
-.two-column-blank-grid {
+.content-section-grid {
     display: grid;
     grid-template-columns: 40fr 60fr;
     gap: 60px;
     align-items: start;
 }
 
-.blank-left {
+.content-section-left {
     /* Empty column */
 }
 
-.content-right {
+.content-section-right {
     display: flex;
     flex-direction: column;
 }
