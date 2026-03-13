@@ -8,11 +8,12 @@
 
 /* Project Title Section */
 .project-title-section {
-    padding: 40px 0;
+    padding: 0;
 }
 
 .project-title-line {
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
     height: 8px;
     background-color: var(--orange-50);
     margin-top: 40px;
@@ -79,14 +80,14 @@
     color: var(--orange-50);
 }
 
-/* Full Width Image Section */
-.full-width-image-section {
+/* Image Container Components */
+.image-container {
     width: 100%;
     background-color: var(--gray-10);
 }
 
-.full-width-image-section.first {
-    padding: 0 28px;
+.image-full-bleed {
+    padding: 0;
 }
 
 /* Content Section - Two Column Grid with Blank Left */
@@ -110,8 +111,8 @@
     flex-direction: column;
 }
 
-.full-width-image-section.second {
-    padding: 120px 28px;
+.image-padded {
+    padding: 120px 0;
 }
 
 /* Role Section (Full Width) */
@@ -133,7 +134,7 @@
 }
 
 .image-caption {
-    margin-top: 16px;
+    margin-top: 40px;
 }
 
 /* Story Section - Two Column Grid */
@@ -270,7 +271,7 @@
 
     .intro-section,
     .story-section,
-    .full-width-image-section {
+    .image-container {
         padding: 40px 0;
     }
 
