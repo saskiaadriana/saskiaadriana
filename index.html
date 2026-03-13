@@ -15,14 +15,13 @@
   <header class="fixed-header">
     <div class="header-container">
       <div class="logo">
-        <span class="uppercase text-header-48">Saskia Adriana</span>
+        <a href="index.html" class="uppercase text-header-48">Saskia Adriana</a>
       </div>
       <nav>
         <ul>
-          <li><a href="#work" class="uppercase text-header-48">Work</a></li>
+          <li><a href="#selected-works" class="uppercase text-header-48 nav-active">Work</a></li>
           <li><a href="#playground" class="uppercase text-header-48">Playground</a></li>
-          <li><a href="#about" class="uppercase text-header-48">About</a></li>
-          <li><a href="#contact" class="uppercase text-header-48">Contact</a></li>
+          <li><a href="about.html" class="uppercase text-header-48">About</a></li>
         </ul>
       </nav>
     </div>
@@ -32,7 +31,7 @@
   <div class="scroll-container">
 
     <!-- SECTION 1: Hero -->
-    <section class="snap-section hero-section">
+    <section class="snap-section hero-section" id="hero">
       <!-- Decorative Bars -->
       <div class="art-bars">
         <div class="status container">
@@ -62,7 +61,7 @@
     </section>
 
     <!-- SECTION 2: Works / Second Screen -->
-    <section class="snap-section works-section">
+    <section class="snap-section works-section" id="selected-works">
       <div class="container">
         <h2 class="text-header-64 uppercase selected-work">[SELECTED WORKS]</h2>
       </div>
@@ -78,7 +77,7 @@
             <!-- Slide 1 -->
             <div class="carousel-slide">
               <div class="slide-content">
-                  <span class="slide-btn text-header-64">VIEW PROJECT</span>
+                  <a href="wais.html" class="slide-btn text-header-64">VIEW PROJECT</a>
                 <div class="slide-image" style="background-image: url('./images/WAIS-Thumbnail.png');"></div>
                 <div class="slide-overlay">
                   <p class="project-description text-body-16-regular">
@@ -168,6 +167,28 @@
     const header = document.querySelector('.fixed-header');
     const scrollContainer = document.querySelector('.scroll-container');
     const worksSection = document.querySelector('.works-section');
+    const navLinks = document.querySelectorAll('nav a');
+    const sections = document.querySelectorAll('.snap-section');
+
+    function updateActiveNav() {
+      let currentSection = '';
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (scrollContainer.scrollTop >= (sectionTop - 300)) {
+          currentSection = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('nav-active');
+        const href = link.getAttribute('href');
+        if (href === `#${currentSection}`) {
+          link.classList.add('nav-active');
+        }
+      });
+    }
 
     scrollContainer.addEventListener('scroll', () => {
       if (scrollContainer.scrollTop > 50) {
@@ -177,7 +198,12 @@
         header.classList.remove('scrolled');
         worksSection.classList.remove('scrolled');
       }
+
+      updateActiveNav();
     });
+
+    // Initialize active nav on page load
+    updateActiveNav();
   </script>
 
   <!-- Carousel JavaScript -->

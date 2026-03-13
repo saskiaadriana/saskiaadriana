@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Saskia Adriana</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="page-scrollable">
+
+  <!-- Fixed Header -->
+  <header class="fixed-header fixed-header-transparent">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html" class="uppercase text-header-48">Saskia Adriana</a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html#selected-works" class="uppercase text-header-48">Work</a></li>
+          <li><a href="index.html#playground" class="uppercase text-header-48">Playground</a></li>
+          <li><a href="about.html" class="uppercase text-header-48 nav-active">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <div class="about-page">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h1 class="text-header-96">Product Designer (UI/UX)</h1>
+          <p class="text-header-96 about-tagline">crafting thoughtful, human-centered digital experiences</p>
+
+          <div class="about-description">
+            <p class="text-body-24-regular">
+              Before moving into UI/UX, I spent around five years working as an interior designer. That experience shaped how I approach design today. I learned to always start with the user by understanding their needs, behaviors, and context before making visual decisions. From defining layouts and flows to building mood boards, color palettes, and functional systems, every choice was planned, intentional, and detail-oriented. The same principles now guide my work in digital products.
+            </p>
+
+            <p class="text-body-24-regular">
+              UI/UX felt like a natural evolution of my design journey. It brings together creativity and logic, empathy and aesthetics, while allowing me to work closely with technology. I enjoy breaking down complex problems, thinking systematically, and paying attention to details — from interaction patterns to small usability decisions that shape the overall experience.
+            </p>
+
+            <p class="text-body-24-regular">
+              I've been passionate about art since I was a kid, especially forms that combine multiple disciplines. Over the years, I explored many creative paths: experimenting with small creative businesses, participating in filmmaking projects, playing in an indie rock band, and contributing to visual art exhibitions. Each experience shaped how I see creativity as something fluid, collaborative, and deeply human.
+            </p>
+
+            <p class="text-body-24-regular">
+              I'm deeply interested in people and culture. I often catch myself wondering what people are thinking — on trains, in airports, or while watching how they react to an image or a video. Those small observations continuously broaden my perspective and feed into how I design experiences with empathy.
+            </p>
+
+            <p class="text-body-24-regular">
+              Outside of work, I'm a lifelong gamer, especially into strategy, RPG, and roguelike games, where systems and decision-making play a central role. I'm also a devoted cat person, currently raising two cats I've cared for since they were born.
+            </p>
+          </div>
+
+          <div class="about-sections">
+            <div class="about-section">
+              <h3 class="text-header-36 uppercase section-title">Acknowledgement</h3>
+              <p class="text-body-24-regular">Special thanks to Arya for helping me to bring this current website design to life.</p>
+            </div>
+
+            <div class="about-section">
+              <h3 class="text-header-36 uppercase section-title">Location</h3>
+              <p class="text-body-24-regular">Jakarta - Indonesia</p>
+              <p class="text-body-24-regular">Turkey - Istanbul</p>
+            </div>
+
+            <div class="about-section">
+              <h3 class="text-header-36 uppercase section-title">Contact Me</h3>
+              <p class="text-body-24-regular">sadriana.id@gmail.com</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-image">
+          <img src="images/saskia-profile-image.png" alt="Saskia Adriana - Product Designer">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header Scroll Script -->
+  <script>
+    const header = document.querySelector('.fixed-header');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+</body>
+
+</html>

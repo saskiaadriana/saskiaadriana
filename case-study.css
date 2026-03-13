@@ -1,0 +1,285 @@
+/* Case Study Page Styles */
+
+.case-study-page {
+    padding-top: 160px;
+    padding-bottom: 80px;
+    background-color: white;
+}
+
+/* Project Title Section */
+.project-title-section {
+    padding: 40px 0;
+}
+
+.project-title-line {
+    width: 100%;
+    height: 8px;
+    background-color: var(--orange-50);
+    margin-top: 40px;
+}
+
+/* Intro Section - Two Column Grid */
+.intro-section {
+    padding: 60px 0;
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 40fr 60fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.intro-left {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.intro-right {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.intro-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.project-description {
+    padding-bottom: 40px;
+}
+
+.role-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contributions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contributions-list li {
+    position: relative;
+    padding-left: 24px;
+}
+
+.contributions-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--orange-50);
+}
+
+/* Full Width Image Section */
+.full-width-image-section {
+    width: 100%;
+    background-color: var(--gray-10);
+}
+
+.full-width-image-section.first {
+    padding: 0 28px;
+}
+
+/* Two Column Section with Blank Left */
+.two-column-blank-left {
+    padding: 60px 0;
+}
+
+.two-column-blank-grid {
+    display: grid;
+    grid-template-columns: 40fr 60fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.blank-left {
+    /* Empty column */
+}
+
+.content-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.full-width-image-section.second {
+    padding: 120px 28px;
+}
+
+/* Role Section (Full Width) */
+.role-section-full {
+    padding: 60px 0;
+}
+
+.role-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.full-width-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+.image-caption {
+    margin-top: 16px;
+}
+
+/* Story Section - Two Column Grid */
+.story-section {
+    padding: 60px 0;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: 40fr 60fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.story-left {
+    position: sticky;
+    top: 200px;
+}
+
+.story-right {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* Footer Navigation */
+.case-study-footer {
+    margin-top: 80px;
+    padding-top: 60px;
+    border-top: 1px solid var(--gray-30);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: center;
+}
+
+.jump-to-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.jump-to-top:hover {
+    opacity: 0.6;
+}
+
+.footer-prev,
+.footer-next {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.footer-prev {
+    justify-content: flex-start;
+}
+
+.footer-next {
+    justify-content: flex-end;
+}
+
+.footer-prev:hover,
+.footer-next:hover {
+    opacity: 0.6;
+}
+
+.project-nav-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 40px;
+    border-top: 1px solid var(--gray-30);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .intro-grid,
+    .story-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .story-left {
+        position: static;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .footer-prev,
+    .footer-next {
+        justify-content: center;
+    }
+
+    .project-nav-info {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .case-study-page {
+        padding-top: 120px;
+    }
+
+    .project-title-section {
+        padding: 40px 0;
+    }
+
+    .intro-section,
+    .story-section,
+    .full-width-image-section {
+        padding: 40px 0;
+    }
+
+    .text-header-96 {
+        font-size: 64px;
+    }
+
+    .text-body-32-regular {
+        font-size: 24px;
+        line-height: 32px;
+    }
+}
