@@ -1,8 +1,8 @@
 /* Case Study Page Styles */
 
 .case-study-page {
-    padding-top: 160px;
-    padding-bottom: 80px;
+    padding-top: 120px;
+    padding-bottom: 0px;
     background-color: white;
 }
 
@@ -34,7 +34,7 @@
 .intro-left {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 28px;
 }
 
 .intro-right {
@@ -140,6 +140,23 @@
     margin-top: 40px;
 }
 
+/* GIF Container */
+.gif-container {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    gap: 80px;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.gif-image {
+    width: 300px;
+    height: 300px;
+    display: block;
+    object-fit: cover;
+}
+
 /* Story Section - Two Column Grid */
 .story-section {
     padding: 60px 0;
@@ -166,21 +183,15 @@
 /* Footer Navigation */
 .case-study-footer {
     margin-top: 80px;
-    padding-top: 60px;
+    padding-top: 0px;
     border-top: 1px solid var(--gray-30);
 }
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
-    align-items: center;
-    margin-bottom: 60px;
-}
-
-.footer-top {
+/* Row 1: Jump to Top */
+.footer-row-1 {
     display: flex;
     justify-content: center;
+    padding: 28px;
 }
 
 .jump-to-top {
@@ -196,6 +207,14 @@
     opacity: 0.6;
 }
 
+/* Row 2: Previous and Next */
+.footer-row-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px;
+}
+
 .footer-prev,
 .footer-next {
     display: flex;
@@ -203,14 +222,6 @@
     gap: 16px;
     text-decoration: none;
     transition: opacity 0.3s ease;
-}
-
-.footer-prev {
-    justify-content: flex-start;
-}
-
-.footer-next {
-    justify-content: flex-end;
 }
 
 .footer-prev:hover,
@@ -230,10 +241,9 @@
     flex-shrink: 0;
 }
 
-.copyright {
-    text-align: center;
-    padding-top: 40px;
-    border-top: 1px solid var(--gray-30);
+/* Row 3: Copyright */
+.footer-row-3 {
+    padding: 28px;
 }
 
 /* Responsive */

@@ -11,6 +11,12 @@
 
 <body>
 
+  <!-- Custom Cursor -->
+  <div class="custom-cursor">
+    <div class="cursor-outer"></div>
+    <div class="cursor-inner"></div>
+  </div>
+
   <!-- Fixed Header -->
   <header class="fixed-header">
     <div class="header-container">
@@ -190,6 +196,139 @@
       });
     }
 
+    // Custom Cursor and Wave Animation
+    const cursor = document.querySelector('.custom-cursor');
+    const cursorOuter = cursor.querySelector('.cursor-outer');
+    const cursorInner = cursor.querySelector('.cursor-inner');
+    const bars = document.querySelectorAll('.art-bars .bar');
+
+    // Mouse position tracking
+    let mouseX = 0;
+    let mouseY = 0;
+    let cursorX = 0;
+    let cursorY = 0;
+
+    // Track mouse/touch position
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    // Mobile touch support
+    const isTouchDevice = 'ontouchstart' in window;
+    if (isTouchDevice) {
+      document.addEventListener('touchmove', (e) => {
+        const touch = e.touches[0];
+        mouseX = touch.clientX;
+        mouseY = touch.clientY;
+      }, { passive: true });
+
+      document.addEventListener('touchstart', () => {
+        cursor.style.opacity = '1';
+      });
+
+      document.addEventListener('touchend', () => {
+        cursor.style.opacity = '0';
+      });
+    }
+
+    // Smooth cursor movement
+    function updateCursor() {
+      const speed = 0.15;
+      cursorX += (mouseX - cursorX) * speed;
+      cursorY += (mouseY - cursorY) * speed;
+
+      cursorOuter.style.left = cursorX + 'px';
+      cursorOuter.style.top = cursorY + 'px';
+      cursorInner.style.left = cursorX + 'px';
+      cursorInner.style.top = cursorY + 'px';
+
+      requestAnimationFrame(updateCursor);
+    }
+
+    // Hide cursor when leaving window
+    document.addEventListener('mouseleave', () => {
+      cursor.style.opacity = '0';
+    });
+
+    document.addEventListener('mouseenter', () => {
+      cursor.style.opacity = '1';
+    });
+
+    // Bar wave distortion effect
+    const barStates = [];
+
+    function initBars() {
+      bars.forEach((bar, index) => {
+        barStates.push({
+          element: bar,
+          baseY: 0,
+          currentY: 0,
+          targetY: 0,
+          velocity: 0
+        });
+      });
+    }
+
+    function updateBars() {
+      barStates.forEach((bar, index) => {
+        const barRect = bar.element.getBoundingClientRect();
+        const barCenterY = barRect.top + barRect.height / 2;
+
+        // Calculate distance from cursor Y to bar center Y
+        const distY = barCenterY - cursorY;
+        const distance = Math.abs(distY);
+
+        // Create wave effect based on proximity
+        const influenceRadius = 200;
+        const maxDisplacement = 40;
+
+        if (distance < influenceRadius) {
+          // Sine wave based on distance
+          const wavePhase = (distance / influenceRadius) * Math.PI * 2;
+          const amplitude = (1 - distance / influenceRadius) * maxDisplacement;
+          const direction = distY > 0 ? 1 : -1;
+
+          bar.targetY = Math.sin(wavePhase) * amplitude * direction;
+        } else {
+          bar.targetY = 0;
+        }
+
+        // Smooth spring animation
+        const spring = 0.08;
+        const damping = 0.85;
+
+        const force = (bar.targetY - bar.currentY) * spring;
+        bar.velocity += force;
+        bar.velocity *= damping;
+        bar.currentY += bar.velocity;
+
+        // Apply transform
+        bar.element.style.transform = `translateY(${bar.currentY}px) scaleY(1)`;
+      });
+
+      requestAnimationFrame(updateBars);
+    }
+
+    // Cursor feedback for interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, .carousel-btn');
+    interactiveElements.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursorOuter.style.transform = 'translate(-50%, -50%) scale(1.2)';
+        cursorInner.style.transform = 'translate(-50%, -50%) scale(1.3)';
+      });
+
+      el.addEventListener('mouseleave', () => {
+        cursorOuter.style.transform = 'translate(-50%, -50%) scale(1)';
+        cursorInner.style.transform = 'translate(-50%, -50%) scale(1)';
+      });
+    });
+
+    // Initialize
+    initBars();
+    updateCursor();
+    updateBars();
+
     scrollContainer.addEventListener('scroll', () => {
       if (scrollContainer.scrollTop > 50) {
         header.classList.add('scrolled');
@@ -202,7 +341,6 @@
       updateActiveNav();
     });
 
-    // Initialize active nav on page load
     updateActiveNav();
   </script>
 

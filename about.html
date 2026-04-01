@@ -10,6 +10,12 @@
 
 <body class="page-scrollable">
 
+  <!-- Custom Cursor -->
+  <div class="custom-cursor">
+    <div class="cursor-outer"></div>
+    <div class="cursor-inner"></div>
+  </div>
+
   <!-- Fixed Header -->
   <header class="fixed-header fixed-header-transparent">
     <div class="header-container">
@@ -93,6 +99,83 @@
         header.classList.remove('scrolled');
       }
     });
+  </script>
+
+  <!-- Custom Cursor Script -->
+  <script>
+    const cursor = document.querySelector('.custom-cursor');
+    const cursorOuter = cursor.querySelector('.cursor-outer');
+    const cursorInner = cursor.querySelector('.cursor-inner');
+
+    // Mouse position tracking
+    let mouseX = 0;
+    let mouseY = 0;
+    let cursorX = 0;
+    let cursorY = 0;
+
+    // Track mouse position
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    // Mobile touch support
+    const isTouchDevice = 'ontouchstart' in window;
+    if (isTouchDevice) {
+      document.addEventListener('touchmove', (e) => {
+        const touch = e.touches[0];
+        mouseX = touch.clientX;
+        mouseY = touch.clientY;
+      }, { passive: true });
+
+      document.addEventListener('touchstart', () => {
+        cursor.style.opacity = '1';
+      });
+
+      document.addEventListener('touchend', () => {
+        cursor.style.opacity = '0';
+      });
+    }
+
+    // Smooth cursor movement
+    function updateCursor() {
+      const speed = 0.15;
+      cursorX += (mouseX - cursorX) * speed;
+      cursorY += (mouseY - cursorY) * speed;
+
+      cursorOuter.style.left = cursorX + 'px';
+      cursorOuter.style.top = cursorY + 'px';
+      cursorInner.style.left = cursorX + 'px';
+      cursorInner.style.top = cursorY + 'px';
+
+      requestAnimationFrame(updateCursor);
+    }
+
+    // Hide cursor when leaving window
+    document.addEventListener('mouseleave', () => {
+      cursor.style.opacity = '0';
+    });
+
+    document.addEventListener('mouseenter', () => {
+      cursor.style.opacity = '1';
+    });
+
+    // Cursor feedback for interactive elements
+    const interactiveElements = document.querySelectorAll('a, button');
+    interactiveElements.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursorOuter.style.transform = 'translate(-50%, -50%) scale(1.2)';
+        cursorInner.style.transform = 'translate(-50%, -50%) scale(1.3)';
+      });
+
+      el.addEventListener('mouseleave', () => {
+        cursorOuter.style.transform = 'translate(-50%, -50%) scale(1)';
+        cursorInner.style.transform = 'translate(-50%, -50%) scale(1)';
+      });
+    });
+
+    // Initialize
+    updateCursor();
   </script>
 
 </body>
