@@ -244,6 +244,33 @@
 /* Row 3: Copyright */
 .footer-row-3 {
     padding: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-social-links {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.footer-social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    transition: opacity 0.3s ease;
+}
+
+.footer-social-links a:hover {
+    opacity: 0.6;
+}
+
+.footer-social-links img {
+    width: 24px;
+    height: 24px;
 }
 
 /* Responsive */
@@ -295,5 +322,11 @@
     .text-body-32-regular {
         font-size: 24px;
         line-height: 32px;
+    }
+
+    .footer-row-3 {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
     }
 }
