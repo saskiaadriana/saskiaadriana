@@ -537,6 +537,10 @@ nav li:hover a {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
 }
 
 .bar {
