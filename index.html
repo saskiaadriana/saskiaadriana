@@ -456,6 +456,16 @@
     });
   </script>
 
+  <!-- Mobile Redirect -->
+  <script>
+    window.addEventListener('load', () => {
+      const isMobile = window.innerWidth <= 768;
+      if (isMobile && !window.location.pathname.includes('m.html')) {
+        window.location.replace('m.html');
+      }
+    });
+  </script>
+
 </body>
 
 </html>
