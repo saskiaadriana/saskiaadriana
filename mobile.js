@@ -168,26 +168,42 @@ function initSwipeNavigation() {
 
   if (!carouselContentWrapper) return;
 
+  let touchStartY = 0;
+  let touchEndY = 0;
+
   carouselContentWrapper.addEventListener('touchstart', (e) => {
     touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
   }, { passive: true });
+
+  // Non-passive so we can preventDefault to block vertical snap scroll
+  // when the gesture is clearly horizontal
+  carouselContentWrapper.addEventListener('touchmove', (e) => {
+    const deltaX = Math.abs(e.changedTouches[0].screenX - touchStartX);
+    const deltaY = Math.abs(e.changedTouches[0].screenY - touchStartY);
+    if (deltaX > deltaY && deltaX > 10) {
+      e.preventDefault();
+    }
+  }, { passive: false });
 
   carouselContentWrapper.addEventListener('touchend', (e) => {
     touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
+    touchEndY = e.changedTouches[0].screenY;
+    handleSwipe(touchEndY - touchStartY);
   }, { passive: true });
 }
 
-function handleSwipe() {
-  const swipeThreshold = 50; // Minimum swipe distance
+function handleSwipe(deltaY = 0) {
+  const swipeThreshold = 50;
   const swipeDistance = touchStartX - touchEndX;
 
+  // Ignore if vertical movement dominates
+  if (Math.abs(deltaY) > Math.abs(swipeDistance)) return;
+
   if (swipeDistance > swipeThreshold) {
-    // Swipe left - go to next slide
     const nextIndex = (currentIndex + 1) % totalSlides;
     goToSlide(nextIndex);
   } else if (swipeDistance < -swipeThreshold) {
-    // Swipe right - go to previous slide
     const prevIndex = (currentIndex - 1 + totalSlides) % totalSlides;
     goToSlide(prevIndex);
   }
