@@ -298,7 +298,77 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initialize jump to top functionality
   initJumpToTop();
+
+  // Initialize read more toggles
+  initReadMore();
 });
+
+// Read more / collapse description toggle
+function initReadMore() {
+  document.querySelectorAll('.mobile-project-description').forEach(p => {
+    const slide = p.closest('.mobile-carousel-content');
+    const wasHidden = slide && getComputedStyle(slide).display === 'none';
+
+    if (wasHidden) {
+      slide.style.visibility = 'hidden';
+      slide.style.position = 'absolute';
+      slide.style.display = 'flex';
+    }
+
+    const fullText = p.textContent.trim();
+    const lineHeight = parseFloat(getComputedStyle(p).lineHeight);
+    const maxHeight = lineHeight * 2;
+    const needsTruncation = p.scrollHeight > maxHeight + 1;
+
+    if (!needsTruncation) {
+      if (wasHidden) {
+        slide.style.visibility = '';
+        slide.style.position = '';
+        slide.style.display = '';
+      }
+      return;
+    }
+
+    function createBtn(label, onClick) {
+      const btn = document.createElement('span');
+      btn.className = 'mobile-read-more-btn';
+      btn.textContent = label;
+      btn.addEventListener('click', onClick);
+      return btn;
+    }
+
+    function showTruncated() {
+      const probe = createBtn(' READ MORE', () => {});
+      let lo = 0, hi = fullText.length;
+      while (lo < hi - 1) {
+        const mid = Math.floor((lo + hi) / 2);
+        p.textContent = '';
+        p.appendChild(document.createTextNode(fullText.slice(0, mid) + '... '));
+        p.appendChild(probe);
+        if (p.scrollHeight <= maxHeight + 1) lo = mid;
+        else hi = mid;
+      }
+      p.textContent = '';
+      p.appendChild(document.createTextNode(fullText.slice(0, lo) + '... '));
+      p.appendChild(createBtn('READ MORE', showExpanded));
+    }
+
+    function showExpanded() {
+      p.textContent = '';
+      p.appendChild(document.createTextNode(fullText + ' '));
+      p.appendChild(createBtn('READ LESS', showTruncated));
+    }
+
+    // Run initial truncation while element is still measurable
+    showTruncated();
+
+    if (wasHidden) {
+      slide.style.visibility = '';
+      slide.style.position = '';
+      slide.style.display = '';
+    }
+  });
+}
 
 // Jump to top functionality
 function initJumpToTop() {

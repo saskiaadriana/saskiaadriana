@@ -153,7 +153,7 @@ body.page-case-study {
   left: 0;
   right: 0;
   background: transparent;
-  padding: 28px 14px;
+  padding: 13px 14px;
   z-index: 1000;
   box-sizing: border-box;
   transition: background-color 0.3s ease;
@@ -162,6 +162,7 @@ body.page-case-study {
 .mobile-header-light a,
 .mobile-header a {
   transition: color 0.3s ease;
+  line-height: 20px;
 }
 
 .mobile-header-container {
@@ -223,43 +224,38 @@ body.page-case-study {
 
 /* Header Spacer */
 .mobile-header-spacer {
-  height: 104px;
+  height: 74px;
   width: 100%;
 }
 
 .mobile-art-bar-1 {
   height: 4px;
-  background-color: var(--orange-10);
+  background-color: var(--orange-20);
 }
 
 .mobile-art-bar-2 {
   height: 8px;
-  background-color: var(--orange-20);
+  background-color: var(--orange-30);
 }
 
 .mobile-art-bar-3 {
   height: 16px;
-  background-color: var(--orange-30);
+  background-color: var(--orange-40);
 }
 
 .mobile-art-bar-4 {
   height: 32px;
-  background-color: var(--orange-40);
+  background-color: var(--orange-50);
 }
 
 .mobile-art-bar-5 {
   height: 64px;
-  background-color: var(--orange-50);
-}
-
-.mobile-art-bar-6 {
-  height: 128px;
   background-color: var(--orange-60);
 }
 
 /* Mobile Hero Content */
 .mobile-hero-content {
-  padding: 28px 14px;
+  padding: 42px 14px 28px;
 }
 
 .mobile-job-titles {
@@ -294,6 +290,14 @@ body.page-case-study {
   gap: 10px;
   padding: 0 0 28px 0;
   flex: 1;
+}
+
+.mobile-scroll-text-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  gap: 0;
 }
 
 .scroll-chevron {
@@ -337,7 +341,7 @@ body.page-case-study {
   display: flex;
   flex-direction: row;
   gap: 8px;
-  padding: 28px 0 0 0;
+  padding: 0px 0 0 0;
   box-sizing: border-box;
 }
 
@@ -416,7 +420,7 @@ body.page-case-study {
 /* Project Thumbnail */
 .mobile-project-thumbnail {
   width: 100%;
-  height: 260px;
+  height: 230px;
   object-fit: contain;
   object-position: center;
   display: block;
@@ -424,13 +428,30 @@ body.page-case-study {
 }
 
 /* Project Description */
+.mobile-description-wrapper {
+  padding: 0 14px;
+}
+
 .mobile-project-description {
   font-family: var(--font-body);
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   color: var(--gray-80);
-  padding: 0 14px;
+}
+
+.mobile-read-more-btn {
+  display: inline;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--orange-50);
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 /* Section Header */
@@ -482,7 +503,7 @@ body.page-case-study {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 90px;
+  height: 80px;
   background-color: var(--orange-50);
   text-decoration: none;
   margin-top: auto;
