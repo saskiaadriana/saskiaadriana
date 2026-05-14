@@ -12,6 +12,7 @@ body.page-mobile {
   color: var(--color-text-main);
   background: var(--color-bg);
   height: 100vh;
+  height: 100svh;
   overflow: hidden;
 }
 
@@ -26,6 +27,7 @@ body.page-case-study {
 .mobile-scroll-container {
   width: 100%;
   height: 100vh;
+  height: 100svh;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
@@ -36,7 +38,9 @@ body.page-case-study {
 .mobile-snap-section {
   width: 100%;
   height: 100vh;
+  height: 100svh;
   min-height: 100vh;
+  min-height: 100svh;
   scroll-snap-align: start;
   scroll-snap-stop: always;
   display: flex;
@@ -288,7 +292,7 @@ body.page-case-study {
   align-items: center;
   justify-content: flex-end;
   gap: 10px;
-  padding: 0 0 28px 0;
+  padding: 0 0 max(28px, calc(28px + env(safe-area-inset-bottom))) 0;
   flex: 1;
 }
 
@@ -421,7 +425,7 @@ body.page-case-study {
 .mobile-project-thumbnail {
   width: 100%;
   height: 230px;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   display: block;
   background-color: var(--gray-10);
@@ -504,6 +508,7 @@ body.page-case-study {
   justify-content: center;
   width: 100%;
   height: 80px;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
   background-color: var(--orange-50);
   text-decoration: none;
   margin-top: auto;
@@ -876,6 +881,7 @@ button:active,
 /* Mobile Container */
 .mobile-container {
   min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   padding: 0 14px; /* Mobile padding */
