@@ -442,6 +442,10 @@ body {
 .hero-section {
     padding-top: 160px;
     background-color: var(--gray-80);
+    overflow: hidden;
+    position: relative;
+    justify-content: flex-end;
+    align-items: flex-start;
 }
 
 .works-section {
@@ -596,6 +600,7 @@ nav li:hover a {
 /* Hero Content */
 .hero-content {
     padding-bottom: 28px;
+    margin-top: auto;
 }
 
 .hero-title {
@@ -760,10 +765,6 @@ nav li:hover a {
     max-height: 180%;
     width: auto;
     object-fit: contain;
-}
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
 }
 
 .overlay-subtitle{
