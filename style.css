@@ -80,10 +80,10 @@
     --gray-70: #362E2B;
     --gray-80: #181818;
 
-    --color-text-main: var(--gray-20);
+    --color-text-main: var(--gray-80);
     --color-text-secondary: var(--gray-60);
     --color-text-third: var(--orange-50);
-    --color-bg: var(--gray-80);
+    --color-bg: var(--gray-30);
     --color-primary: var(--orange-60);
 
     --font-header: 'Thunder', sans-serif;
@@ -374,14 +374,16 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
-    background-color: var(--gray-80);
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     padding: 28px;
-    transition: padding 0.3s ease, background-color 0.3s ease;
+    transition: padding 0.3s ease, background 0.3s ease, backdrop-filter 0.3s ease;
 }
 
 .fixed-header .text-header-48 {
     transition: font-size 0.3s ease, color 0.3s ease, transform 0.3s ease;
-    color: var(--gray-20);
+    color: var(--gray-80);
 }
 
 .header-container {
@@ -394,7 +396,9 @@ body {
 /* Header scrolled state */
 .fixed-header.scrolled {
     padding: 14px 28px;
-    background-color: white;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .fixed-header.scrolled .text-header-48 {
@@ -412,7 +416,7 @@ body {
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
-    background-color: white;
+    background-color: var(--gray-30);
 }
 
 .scroll-container::-webkit-scrollbar {
@@ -420,7 +424,7 @@ body {
 }
 
 .scroll-container::-webkit-scrollbar-track {
-    background: var(--gray-70);
+    background: var(--gray-30);
 }
 
 .scroll-container::-webkit-scrollbar-thumb {
@@ -441,7 +445,7 @@ body {
 
 .hero-section {
     padding-top: 160px;
-    background-color: var(--gray-80);
+    background-color: var(--gray-20);
     overflow: hidden;
     position: relative;
     justify-content: flex-end;
@@ -487,7 +491,7 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    color: var(--gray-20);
+    color: var(--gray-80);
     position: relative;
     display: inline-block;
     transition: color 0.3s ease, transform 0.3s ease;
@@ -526,7 +530,7 @@ nav li:hover a {
 .status {
     /* Removed padding to let flex gap handle it, added width 100% to work with container class */
     width: 100%;
-    color: var(--gray-20);
+    color: var(--gray-80);
 }
 
 
@@ -623,7 +627,7 @@ nav li:hover a {
 .hero-description {
     /* REMOVED typography properties to allow tokens (text-body-*) to work */
     max-width: 600px;
-    color: var(--gray-30);
+    color: var(--gray-60);
 }
 
 /* Responsive Overrides */

@@ -202,9 +202,15 @@ body.page-case-study {
 }
 
 /* Dark Header Variation */
+.mobile-header.dark {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
 .mobile-header.dark .mobile-header-left a,
 .mobile-header.dark .mobile-header-right a {
-  color: var(--gray-10);
+  color: var(--gray-80);
   text-decoration: none;
 }
 
@@ -274,7 +280,7 @@ body.page-case-study {
   font-weight: 600;
   font-size: 20px;
   line-height: 1.2;
-  color: var(--gray-20);
+  color: var(--gray-80);
 }
 
 .mobile-description {
@@ -282,7 +288,7 @@ body.page-case-study {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
-  color: var(--gray-30);
+  color: var(--gray-60);
 }
 
 /* Mobile Scroll Indicator */
@@ -307,6 +313,7 @@ body.page-case-study {
 .scroll-chevron {
   width: 24px;
   height: 24px;
+  filter: brightness(0);
 }
 
 .scroll-text-small {
@@ -314,7 +321,7 @@ body.page-case-study {
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
-  color: var(--gray-40);
+  color: var(--gray-50);
   text-align: center;
 }
 
