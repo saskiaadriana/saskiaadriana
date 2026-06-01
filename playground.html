@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playground - Saskia Adriana</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="page-scrollable">
+
+  <!-- Custom Cursor -->
+  <div class="custom-cursor">
+    <div class="cursor-outer"></div>
+    <div class="cursor-inner"></div>
+  </div>
+
+  <!-- Fixed Header -->
+  <header class="fixed-header fixed-header-transparent">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html" class="uppercase text-header-48">Saskia Adriana</a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html#selected-works" class="uppercase text-header-48">Work</a></li>
+          <li><a href="playground.html" class="uppercase text-header-48 nav-active">Playground</a></li>
+          <li><a href="about.html" class="uppercase text-header-48">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Playground Content -->
+  <div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; background-color: var(--gray-20);">
+    <p class="text-header-96 uppercase" style="color: var(--gray-30);">[PLAYGROUND]</p>
+    <p class="text-body-24-regular" style="color: var(--gray-50);">Something fun is being built here. Check back soon.</p>
+    <a href="index.html" class="text-body-16-regular" style="color: var(--orange-50); text-decoration: none; margin-top: 8px;">← Back to home</a>
+  </div>
+
+  <!-- Custom Cursor Script -->
+  <script>
+    const cursor = document.querySelector('.custom-cursor');
+    const cursorOuter = cursor.querySelector('.cursor-outer');
+    const cursorInner = cursor.querySelector('.cursor-inner');
+
+    let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
+
+    document.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
+    document.addEventListener('mouseleave', () => cursor.style.opacity = '0');
+    document.addEventListener('mouseenter', () => cursor.style.opacity = '1');
+
+    function updateCursor() {
+      cursorX += (mouseX - cursorX) * 0.15;
+      cursorY += (mouseY - cursorY) * 0.15;
+      cursorOuter.style.left = cursorX + 'px';
+      cursorOuter.style.top = cursorY + 'px';
+      cursorInner.style.left = cursorX + 'px';
+      cursorInner.style.top = cursorY + 'px';
+      requestAnimationFrame(updateCursor);
+    }
+
+    document.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursorOuter.style.transform = 'translate(-50%, -50%) scale(1.2)';
+        cursorInner.style.transform = 'translate(-50%, -50%) scale(1.3)';
+      });
+      el.addEventListener('mouseleave', () => {
+        cursorOuter.style.transform = 'translate(-50%, -50%) scale(1)';
+        cursorInner.style.transform = 'translate(-50%, -50%) scale(1)';
+      });
+    });
+
+    updateCursor();
+  </script>
+
+</body>
+</html>
